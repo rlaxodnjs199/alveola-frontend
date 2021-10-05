@@ -29,7 +29,6 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 // project imports
 import MainCard from 'ui-component/cards/MainCard';
 import Transitions from 'ui-component/extended/Transitions';
-import UpgradePlanCard from './UpgradePlanCard';
 
 // assets
 import { IconLogout, IconSearch, IconSettings } from '@tabler/icons';
@@ -225,7 +224,6 @@ const ProfileSection = () => {
                                         />
                                         <Divider />
                                         <PerfectScrollbar className={classes.ScrollHeight}>
-                                            <UpgradePlanCard />
                                             <Divider />
                                             <Card className={classes.card}>
                                                 <CardContent>

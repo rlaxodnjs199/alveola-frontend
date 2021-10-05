@@ -1,5 +1,5 @@
 // assets
-import { IconKey, IconReceipt2, IconBug, IconBellRinging, IconPhoneCall } from '@tabler/icons';
+import { IconKey, IconReceipt2, IconBug, IconBellRinging, IconPhoneCall, IconCircle0, IconCircle1, IconCircle2 } from '@tabler/icons';
 
 // constant
 const icons = {
@@ -7,7 +7,10 @@ const icons = {
     IconReceipt2,
     IconBug,
     IconBellRinging,
-    IconPhoneCall
+    IconPhoneCall,
+    IconCircle0,
+    IconCircle1,
+    IconCircle2
 };
 
 // ===========================|| EXTRA PAGES MENU ITEMS ||=========================== //
@@ -20,24 +23,24 @@ const ctscan = {
         {
             id: 'raw',
             title: 'Raw',
-            type: 'collapse',
-            icon: icons.IconKey,
-            children: [
-            ]
+            type: 'item',
+            url: '/ct-scan',
+            icon: icons.IconCircle0,
+            breadcrumbs: false
         },
         {
             id: 'deidentified',
             title: 'De-identified',
-            type: 'collapse',
-            icon: icons.IconKey,
-            children: [
-            ]
+            type: 'item',
+            url: '/ct-scan',
+            icon: icons.IconCircle1,
+            breadcrumbs: false
         },
         {
             id: 'vidaprocessed',
             title: 'VIDA Processed',
             type: 'collapse',
-            icon: icons.IconKey,
+            icon: icons.IconCircle2,
             children: [
                 {
                     id: 'login3',

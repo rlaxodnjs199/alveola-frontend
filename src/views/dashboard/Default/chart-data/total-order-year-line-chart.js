@@ -1,7 +1,7 @@
 // ===========================|| DASHBOARD - TOTAL ORDER YEAR CHART ||=========================== //
 
 const chartData = {
-  type: "line",
+  type: 'line',
   height: 90,
   options: {
     chart: {
@@ -12,13 +12,13 @@ const chartData = {
     dataLabels: {
       enabled: false,
     },
-    colors: ["#fff"],
+    colors: ['#fff'],
     fill: {
-      type: "solid",
+      type: 'solid',
       opacity: 1,
     },
     stroke: {
-      curve: "smooth",
+      curve: 'smooth',
       width: 3,
     },
     yaxis: {
@@ -26,7 +26,7 @@ const chartData = {
       max: 100,
     },
     tooltip: {
-      theme: "dark",
+      theme: 'dark',
       fixed: {
         enabled: false,
       },
@@ -35,7 +35,7 @@ const chartData = {
       },
       y: {
         title: {
-          formatter: () => "Total Order",
+          formatter: () => 'Total Order',
         },
       },
       marker: {
@@ -45,7 +45,7 @@ const chartData = {
   },
   series: [
     {
-      name: "series1",
+      name: 'series1',
       data: [35, 44, 9, 54, 45, 66, 41, 69],
     },
   ],

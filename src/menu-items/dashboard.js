@@ -1,5 +1,5 @@
 // assets
-import { IconDashboard, IconDeviceAnalytics } from "@tabler/icons";
+import { IconDashboard, IconDeviceAnalytics } from '@tabler/icons';
 
 // constant
 const icons = {
@@ -10,15 +10,15 @@ const icons = {
 // ===========================|| DASHBOARD MENU ITEMS ||=========================== //
 
 const dashboard = {
-  id: "dashboard",
-  title: "Dashboard",
-  type: "group",
+  id: 'dashboard',
+  title: 'Dashboard',
+  type: 'group',
   children: [
     {
-      id: "default",
-      title: "Dashboard",
-      type: "item",
-      url: "/dashboard/default",
+      id: 'default',
+      title: 'Dashboard',
+      type: 'item',
+      url: '/dashboard/default',
       icon: icons.IconDashboard,
       breadcrumbs: false,
     },

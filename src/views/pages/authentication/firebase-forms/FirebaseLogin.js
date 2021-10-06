@@ -1,9 +1,9 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 // material-ui
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from '@material-ui/styles';
 import {
   Box,
   Button,
@@ -19,54 +19,54 @@ import {
   OutlinedInput,
   Stack,
   Typography,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
 // third party
-import * as Yup from "yup";
-import { Formik } from "formik";
+import * as Yup from 'yup';
+import { Formik } from 'formik';
 
 // project imports
-import useScriptRef from "hooks/useScriptRef";
-import AnimateButton from "ui-component/extended/AnimateButton";
+import useScriptRef from 'hooks/useScriptRef';
+import AnimateButton from 'ui-component/extended/AnimateButton';
 
 // assets
-import Visibility from "@material-ui/icons/Visibility";
-import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
-import Google from "assets/images/icons/social-google.svg";
+import Google from 'assets/images/icons/social-google.svg';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
   redButton: {
-    fontSize: "1rem",
+    fontSize: '1rem',
     fontWeight: 500,
     backgroundColor: theme.palette.grey[50],
-    border: "1px solid",
+    border: '1px solid',
     borderColor: theme.palette.grey[100],
     color: theme.palette.grey[700],
-    textTransform: "none",
-    "&:hover": {
+    textTransform: 'none',
+    '&:hover': {
       backgroundColor: theme.palette.primary.light,
     },
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "0.875rem",
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.875rem',
     },
   },
   signDivider: {
     flexGrow: 1,
   },
   signText: {
-    cursor: "unset",
+    cursor: 'unset',
     margin: theme.spacing(2),
-    padding: "5px 56px",
+    padding: '5px 56px',
     borderColor: `${theme.palette.grey[100]} !important`,
     color: `${theme.palette.grey[900]}!important`,
     fontWeight: 500,
   },
   loginIcon: {
-    marginRight: "16px",
-    [theme.breakpoints.down("sm")]: {
-      marginRight: "8px",
+    marginRight: '16px',
+    [theme.breakpoints.down('sm')]: {
+      marginRight: '8px',
     },
   },
   loginInput: {
@@ -84,7 +84,7 @@ const FirebaseLogin = (props, { ...others }) => {
   const [checked, setChecked] = React.useState(true);
 
   const googleHandler = async () => {
-    console.error("Login");
+    console.error('Login');
   };
 
   const [showPassword, setShowPassword] = React.useState(false);
@@ -114,7 +114,7 @@ const FirebaseLogin = (props, { ...others }) => {
                 alt="google"
                 width="20px"
                 className={classes.loginIcon}
-              />{" "}
+              />{' '}
               Sign in with Google
             </Button>
           </AnimateButton>
@@ -122,8 +122,8 @@ const FirebaseLogin = (props, { ...others }) => {
         <Grid item xs={12}>
           <Box
             sx={{
-              alignItems: "center",
-              display: "flex",
+              alignItems: 'center',
+              display: 'flex',
             }}
           >
             <Divider className={classes.signDivider} orientation="horizontal" />
@@ -162,16 +162,16 @@ const FirebaseLogin = (props, { ...others }) => {
 
       <Formik
         initialValues={{
-          email: "info@codedthemes.com",
-          password: "123456",
+          email: 'info@codedthemes.com',
+          password: '123456',
           submit: null,
         }}
         validationSchema={Yup.object().shape({
           email: Yup.string()
-            .email("Must be a valid email")
+            .email('Must be a valid email')
             .max(255)
-            .required("Email is required"),
-          password: Yup.string().max(255).required("Password is required"),
+            .required('Email is required'),
+          password: Yup.string().max(255).required('Password is required'),
         })}
         onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
           try {
@@ -226,8 +226,8 @@ const FirebaseLogin = (props, { ...others }) => {
                   error
                   id="standard-weight-helper-text-email-login"
                 >
-                  {" "}
-                  {errors.email}{" "}
+                  {' '}
+                  {errors.email}{' '}
                 </FormHelperText>
               )}
             </FormControl>
@@ -242,7 +242,7 @@ const FirebaseLogin = (props, { ...others }) => {
               </InputLabel>
               <OutlinedInput
                 id="outlined-adornment-password-login"
-                type={showPassword ? "text" : "password"}
+                type={showPassword ? 'text' : 'password'}
                 value={values.password}
                 name="password"
                 onBlur={handleBlur}
@@ -271,8 +271,8 @@ const FirebaseLogin = (props, { ...others }) => {
                   error
                   id="standard-weight-helper-text-password-login"
                 >
-                  {" "}
-                  {errors.password}{" "}
+                  {' '}
+                  {errors.password}{' '}
                 </FormHelperText>
               )}
             </FormControl>
@@ -298,7 +298,7 @@ const FirebaseLogin = (props, { ...others }) => {
                 component={Link}
                 to="/pages/forgot-password/forgot-password3"
                 color="secondary"
-                sx={{ textDecoration: "none" }}
+                sx={{ textDecoration: 'none' }}
               >
                 Forgot Password?
               </Typography>

@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 // material-ui
-import { makeStyles } from "@material-ui/styles";
-import { Card, CardContent, Grid, Skeleton } from "@material-ui/core";
+import { makeStyles } from '@material-ui/styles';
+import { Card, CardContent, Grid, Skeleton } from '@material-ui/core';
 
 // project imports
-import { gridSpacing } from "store/constant";
+import { gridSpacing } from 'store/constant';
 
 // style constant
 const useStyles = makeStyles({
   cardAction: {
-    padding: "10px",
-    display: "flex",
+    padding: '10px',
+    display: 'flex',
     paddingTop: 0,
-    justifyContent: "center",
+    justifyContent: 'center',
   },
 });
 

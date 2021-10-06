@@ -1,22 +1,22 @@
-import React from "react";
-import { Link as RouterLink } from "react-router-dom";
+import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
 // material-ui
-import { useTheme } from "@material-ui/core/styles";
+import { useTheme } from '@material-ui/core/styles';
 import {
   Divider,
   Grid,
   Stack,
   Typography,
   useMediaQuery,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
 // project imports
-import AuthWrapper1 from "../AuthWrapper1";
-import AuthCardWrapper from "../AuthCardWrapper";
-import Logo from "ui-component/Logo";
-import FirebaseRegister from "../firebase-forms/FirebaseRegister";
-import AuthFooter from "ui-component/cards/AuthFooter";
+import Logo from 'ui-component/Logo';
+import AuthFooter from 'ui-component/cards/AuthFooter';
+import AuthCardWrapper from '../AuthCardWrapper';
+import AuthWrapper1 from '../AuthWrapper1';
+import FirebaseRegister from '../firebase-forms/FirebaseRegister';
 
 // assets
 
@@ -24,7 +24,7 @@ import AuthFooter from "ui-component/cards/AuthFooter";
 
 const Register = () => {
   const theme = useTheme();
-  const matchDownSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchDownSM = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <AuthWrapper1>
@@ -32,14 +32,14 @@ const Register = () => {
         container
         direction="column"
         justifyContent="flex-end"
-        sx={{ minHeight: "100vh" }}
+        sx={{ minHeight: '100vh' }}
       >
         <Grid item xs={12}>
           <Grid
             container
             justifyContent="center"
             alignItems="center"
-            sx={{ minHeight: "calc(100vh - 68px)" }}
+            sx={{ minHeight: 'calc(100vh - 68px)' }}
           >
             <Grid item sx={{ m: { xs: 1, sm: 3 }, mb: 0 }}>
               <AuthCardWrapper>
@@ -57,7 +57,7 @@ const Register = () => {
                   <Grid item xs={12}>
                     <Grid
                       container
-                      direction={matchDownSM ? "column-reverse" : "row"}
+                      direction={matchDownSM ? 'column-reverse' : 'row'}
                       alignItems="center"
                       justifyContent="center"
                     >
@@ -70,14 +70,14 @@ const Register = () => {
                           <Typography
                             color={theme.palette.secondary.main}
                             gutterBottom
-                            variant={matchDownSM ? "h3" : "h2"}
+                            variant={matchDownSM ? 'h3' : 'h2'}
                           >
                             Sign up
                           </Typography>
                           <Typography
                             variant="caption"
                             fontSize="16px"
-                            textAlign={matchDownSM ? "center" : ""}
+                            textAlign={matchDownSM ? 'center' : ''}
                           >
                             Enter your credentials to continue
                           </Typography>
@@ -103,7 +103,7 @@ const Register = () => {
                         component={RouterLink}
                         to="/pages/login/login3"
                         variant="subtitle1"
-                        sx={{ textDecoration: "none" }}
+                        sx={{ textDecoration: 'none' }}
                       >
                         Have an account?
                       </Typography>

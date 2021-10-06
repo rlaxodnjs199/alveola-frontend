@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 // material-ui
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from '@material-ui/styles';
 import {
   Card,
   CardContent,
@@ -10,12 +10,12 @@ import {
   ListItemAvatar,
   ListItemText,
   Skeleton,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
 // style constant
 const useStyles = makeStyles({
   content: {
-    padding: "16px !important",
+    padding: '16px !important',
   },
   padding: {
     paddingTop: 0,

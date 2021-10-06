@@ -1,7 +1,7 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
 // reducer import
-import customizationReducer from "./customizationReducer";
+import customizationReducer from './customizationReducer';
 
 // ===========================|| COMBINE REDUCER ||=========================== //
 

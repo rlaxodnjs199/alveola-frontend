@@ -1,13 +1,13 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 // material-ui
-import { makeStyles } from "@material-ui/styles";
-import { Divider, List, Typography } from "@material-ui/core";
+import { makeStyles } from '@material-ui/styles';
+import { Divider, List, Typography } from '@material-ui/core';
 
 // project imports
-import NavItem from "../NavItem";
-import NavCollapse from "../NavCollapse";
+import NavItem from '../NavItem';
+import NavCollapse from '../NavCollapse';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
@@ -18,8 +18,8 @@ const useStyles = makeStyles((theme) => ({
     ...theme.typography.subMenuCaption,
   },
   menuDivider: {
-    marginTop: "2px",
-    marginBottom: "10px",
+    marginTop: '2px',
+    marginBottom: '10px',
   },
 }));
 
@@ -31,9 +31,9 @@ const NavGroup = ({ item }) => {
   // menu list collapse & items
   const items = item.children.map((menu) => {
     switch (menu.type) {
-      case "collapse":
+      case 'collapse':
         return <NavCollapse key={menu.id} menu={menu} level={1} />;
-      case "item":
+      case 'item':
         return <NavItem key={menu.id} item={menu} level={1} />;
       default:
         return (

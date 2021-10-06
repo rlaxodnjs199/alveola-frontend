@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 // material-ui
-import { useTheme } from "@material-ui/styles";
+import { useTheme } from '@material-ui/styles';
 import {
   Drawer,
   Fab,
@@ -15,19 +15,19 @@ import {
   Slider,
   Tooltip,
   Typography,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
 // third-party
-import PerfectScrollbar from "react-perfect-scrollbar";
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
 // project imports
-import SubCard from "ui-component/cards/SubCard";
-import AnimateButton from "ui-component/extended/AnimateButton";
-import { SET_BORDER_RADIUS, SET_FONT_FAMILY } from "store/actions"; // THEME_RTL
-import { gridSpacing } from "store/constant";
+import SubCard from 'ui-component/cards/SubCard';
+import AnimateButton from 'ui-component/extended/AnimateButton';
+import { SET_BORDER_RADIUS, SET_FONT_FAMILY } from 'store/actions'; // THEME_RTL
+import { gridSpacing } from 'store/constant';
 
 // assets
-import { IconSettings } from "@tabler/icons";
+import { IconSettings } from '@tabler/icons';
 
 // concat 'px'
 function valueText(value) {
@@ -62,14 +62,14 @@ const Customization = () => {
   let initialFont;
   switch (customization.fontFamily) {
     case `'Inter', sans-serif`:
-      initialFont = "Inter";
+      initialFont = 'Inter';
       break;
     case `'Poppins', sans-serif`:
-      initialFont = "Poppins";
+      initialFont = 'Poppins';
       break;
     case `'Roboto', sans-serif`:
     default:
-      initialFont = "Roboto";
+      initialFont = 'Roboto';
       break;
   }
 
@@ -78,13 +78,13 @@ const Customization = () => {
   useEffect(() => {
     let newFont;
     switch (fontFamily) {
-      case "Inter":
+      case 'Inter':
         newFont = `'Inter', sans-serif`;
         break;
-      case "Poppins":
+      case 'Poppins':
         newFont = `'Poppins', sans-serif`;
         break;
-      case "Roboto":
+      case 'Roboto':
       default:
         newFont = `'Roboto', sans-serif`;
         break;
@@ -106,9 +106,9 @@ const Customization = () => {
           sx={{
             bottom: 0,
             m: 4,
-            position: "fixed",
+            position: 'fixed',
             right: 20,
-            zIndex: (theme) => theme.zIndex.speedDial,
+            zIndex: theme.zIndex.speedDial,
             boxShadow: theme.shadows[8],
           }}
         >
@@ -147,8 +147,8 @@ const Customization = () => {
                       control={<Radio />}
                       label="Roboto"
                       sx={{
-                        "& .MuiSvgIcon-root": { fontSize: 28 },
-                        "& .MuiFormControlLabel-label": { color: "grey.900" },
+                        '& .MuiSvgIcon-root': { fontSize: 28 },
+                        '& .MuiFormControlLabel-label': { color: 'grey.900' },
                       }}
                     />
                     <FormControlLabel
@@ -156,8 +156,8 @@ const Customization = () => {
                       control={<Radio />}
                       label="Poppins"
                       sx={{
-                        "& .MuiSvgIcon-root": { fontSize: 28 },
-                        "& .MuiFormControlLabel-label": { color: "grey.900" },
+                        '& .MuiSvgIcon-root': { fontSize: 28 },
+                        '& .MuiFormControlLabel-label': { color: 'grey.900' },
                       }}
                     />
                     <FormControlLabel
@@ -165,8 +165,8 @@ const Customization = () => {
                       control={<Radio />}
                       label="Inter"
                       sx={{
-                        "& .MuiSvgIcon-root": { fontSize: 28 },
-                        "& .MuiFormControlLabel-label": { color: "grey.900" },
+                        '& .MuiSvgIcon-root': { fontSize: 28 },
+                        '& .MuiFormControlLabel-label': { color: 'grey.900' },
                       }}
                     />
                   </RadioGroup>
@@ -203,8 +203,8 @@ const Customization = () => {
                       max={24}
                       color="secondary"
                       sx={{
-                        "& .MuiSlider-valueLabel": {
-                          color: "secondary.light",
+                        '& .MuiSlider-valueLabel': {
+                          color: 'secondary.light',
                         },
                       }}
                     />

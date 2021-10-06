@@ -1,64 +1,64 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 // material-ui
-import { Box, Collapse, Fade, Grow, Slide, Zoom } from "@material-ui/core";
+import { Box, Collapse, Fade, Grow, Slide, Zoom } from '@material-ui/core';
 
 // ===========================|| TRANSITIONS ||=========================== //
 
 const Transitions = React.forwardRef(
   ({ children, position, type, direction, ...others }, ref) => {
     let positionSX = {
-      transformOrigin: "0 0 0",
+      transformOrigin: '0 0 0',
     };
 
     switch (position) {
-      case "top-right":
+      case 'top-right':
         positionSX = {
-          transformOrigin: "top right",
+          transformOrigin: 'top right',
         };
         break;
-      case "top":
+      case 'top':
         positionSX = {
-          transformOrigin: "top",
+          transformOrigin: 'top',
         };
         break;
-      case "bottom-left":
+      case 'bottom-left':
         positionSX = {
-          transformOrigin: "bottom left",
+          transformOrigin: 'bottom left',
         };
         break;
-      case "bottom-right":
+      case 'bottom-right':
         positionSX = {
-          transformOrigin: "bottom right",
+          transformOrigin: 'bottom right',
         };
         break;
-      case "bottom":
+      case 'bottom':
         positionSX = {
-          transformOrigin: "bottom",
+          transformOrigin: 'bottom',
         };
         break;
-      case "top-left":
+      case 'top-left':
       default:
         positionSX = {
-          transformOrigin: "0 0 0",
+          transformOrigin: '0 0 0',
         };
         break;
     }
 
     return (
       <React.Fragment ref={ref}>
-        {type === "grow" && (
+        {type === 'grow' && (
           <Grow {...others}>
             <Box sx={positionSX}>{children}</Box>
           </Grow>
         )}
-        {type === "collapse" && (
+        {type === 'collapse' && (
           <Collapse {...others}>
             <Box sx={positionSX}>{children}</Box>
           </Collapse>
         )}
-        {type === "fade" && (
+        {type === 'fade' && (
           <Fade
             {...others}
             timeout={{
@@ -70,7 +70,7 @@ const Transitions = React.forwardRef(
             <Box sx={positionSX}>{children}</Box>
           </Fade>
         )}
-        {type === "slide" && (
+        {type === 'slide' && (
           <Slide
             {...others}
             timeout={{
@@ -83,7 +83,7 @@ const Transitions = React.forwardRef(
             <Box sx={positionSX}>{children}</Box>
           </Slide>
         )}
-        {type === "zoom" && (
+        {type === 'zoom' && (
           <Zoom {...others}>
             <Box sx={positionSX}>{children}</Box>
           </Zoom>
@@ -95,22 +95,22 @@ const Transitions = React.forwardRef(
 
 Transitions.propTypes = {
   children: PropTypes.node,
-  type: PropTypes.oneOf(["grow", "fade", "collapse", "slide", "zoom"]),
+  type: PropTypes.oneOf(['grow', 'fade', 'collapse', 'slide', 'zoom']),
   position: PropTypes.oneOf([
-    "top-left",
-    "top-right",
-    "top",
-    "bottom-left",
-    "bottom-right",
-    "bottom",
+    'top-left',
+    'top-right',
+    'top',
+    'bottom-left',
+    'bottom-right',
+    'bottom',
   ]),
-  direction: PropTypes.oneOf(["up", "down", "left", "right"]),
+  direction: PropTypes.oneOf(['up', 'down', 'left', 'right']),
 };
 
 Transitions.defaultProps = {
-  type: "grow",
-  position: "top-left",
-  direction: "up",
+  type: 'grow',
+  position: 'top-left',
+  direction: 'up',
 };
 
 export default Transitions;

@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 // material-ui
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from '@material-ui/styles';
 import {
   Avatar,
   List,
@@ -10,58 +10,58 @@ import {
   ListItemAvatar,
   ListItemText,
   Typography,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
 // project imports
-import MainCard from "ui-component/cards/MainCard";
-import TotalIncomeCard from "ui-component/cards/Skeleton/TotalIncomeCard";
+import MainCard from 'ui-component/cards/MainCard';
+import TotalIncomeCard from 'ui-component/cards/Skeleton/TotalIncomeCard';
 
 // assets
-import TableChartOutlinedIcon from "@material-ui/icons/TableChartOutlined";
+import TableChartOutlinedIcon from '@material-ui/icons/TableChartOutlined';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
   card: {
     backgroundColor: theme.palette.primary.dark,
     color: theme.palette.primary.light,
-    overflow: "hidden",
-    position: "relative",
-    "&:after": {
+    overflow: 'hidden',
+    position: 'relative',
+    '&:after': {
       content: '""',
-      position: "absolute",
-      width: "210px",
-      height: "210px",
+      position: 'absolute',
+      width: '210px',
+      height: '210px',
       background: `linear-gradient(210.04deg, ${theme.palette.primary[200]} -50.94%, rgba(144, 202, 249, 0) 83.49%)`,
-      borderRadius: "50%",
-      top: "-30px",
-      right: "-180px",
+      borderRadius: '50%',
+      top: '-30px',
+      right: '-180px',
     },
-    "&:before": {
+    '&:before': {
       content: '""',
-      position: "absolute",
-      width: "210px",
-      height: "210px",
+      position: 'absolute',
+      width: '210px',
+      height: '210px',
       background: `linear-gradient(140.9deg, ${theme.palette.primary[200]} -14.02%, rgba(144, 202, 249, 0) 77.58%)`,
-      borderRadius: "50%",
-      top: "-160px",
-      right: "-130px",
+      borderRadius: '50%',
+      top: '-160px',
+      right: '-130px',
     },
   },
   content: {
-    padding: "16px !important",
+    padding: '16px !important',
   },
   avatar: {
     ...theme.typography.commonAvatar,
     ...theme.typography.largeAvatar,
     backgroundColor: theme.palette.primary[800],
-    color: "#fff",
+    color: '#fff',
   },
   primary: {
-    color: "#fff",
+    color: '#fff',
   },
   secondary: {
     color: theme.palette.primary.light,
-    marginTop: "5px",
+    marginTop: '5px',
   },
   padding: {
     paddingTop: 0,

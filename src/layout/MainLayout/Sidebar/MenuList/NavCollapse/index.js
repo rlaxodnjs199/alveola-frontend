@@ -1,77 +1,77 @@
-import PropTypes from "prop-types";
-import React from "react";
-import { useSelector } from "react-redux";
+import PropTypes from 'prop-types';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 // material-ui
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from '@material-ui/styles';
 import {
   Collapse,
   List,
   ListItemIcon,
   ListItemText,
   Typography,
-} from "@material-ui/core";
-import ListItemButton from "@material-ui/core/ListItemButton";
-
-// project imports
-import NavItem from "../NavItem";
+} from '@material-ui/core';
+import ListItemButton from '@material-ui/core/ListItemButton';
 
 // assets
-import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
-import { IconChevronDown, IconChevronUp } from "@tabler/icons";
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
+import { IconChevronDown, IconChevronUp } from '@tabler/icons';
+
+// project imports
+import NavItem from '../NavItem';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
   collapseIcon: {
-    fontSize: "1rem",
-    marginTop: "auto",
-    marginBottom: "auto",
+    fontSize: '1rem',
+    marginTop: 'auto',
+    marginBottom: 'auto',
   },
   collapseIconSub: {
-    fontSize: "1rem",
-    marginTop: "auto",
-    marginBottom: "auto",
+    fontSize: '1rem',
+    marginTop: 'auto',
+    marginBottom: 'auto',
   },
   menuIcon: {
-    marginTop: "auto",
-    marginBottom: "auto",
+    marginTop: 'auto',
+    marginBottom: 'auto',
   },
   listIcon: {
-    minWidth: "18px",
-    marginTop: "auto",
-    marginBottom: "auto",
+    minWidth: '18px',
+    marginTop: 'auto',
+    marginBottom: 'auto',
   },
   listCustomIconSub: {
-    width: "6px",
-    height: "6px",
+    width: '6px',
+    height: '6px',
   },
   listCustomIconSubActive: {
-    width: "8px",
-    height: "8px",
+    width: '8px',
+    height: '8px',
   },
   listItem: {
-    marginBottom: "5px",
-    alignItems: "flex-start",
+    marginBottom: '5px',
+    alignItems: 'flex-start',
   },
   listItemNoBack: {
-    marginBottom: "5px",
-    backgroundColor: "transparent !important",
-    paddingTop: "8px",
-    paddingBottom: "8px",
-    alignItems: "flex-start",
+    marginBottom: '5px',
+    backgroundColor: 'transparent !important',
+    paddingTop: '8px',
+    paddingBottom: '8px',
+    alignItems: 'flex-start',
   },
   subMenuCaption: {
     ...theme.typography.subMenuCaption,
   },
   collapseWrapper: {
-    position: "relative",
-    "&:after": {
+    position: 'relative',
+    '&:after': {
       content: "''",
-      position: "absolute",
-      left: "32px",
+      position: 'absolute',
+      left: '32px',
       top: 0,
-      height: "100%",
-      width: "1px",
+      height: '100%',
+      width: '1px',
       opacity: 1,
       background: theme.palette.primary.light,
     },
@@ -95,9 +95,9 @@ const NavCollapse = ({ menu, level }) => {
   // menu collapse & item
   const menus = menu.children.map((item) => {
     switch (item.type) {
-      case "collapse":
+      case 'collapse':
         return <NavCollapse key={item.id} menu={item} level={level + 1} />;
-      case "item":
+      case 'item':
         return <NavItem key={item.id} item={item} level={level + 1} />;
       default:
         return (
@@ -118,7 +118,7 @@ const NavCollapse = ({ menu, level }) => {
           ? classes.listCustomIconSubActive
           : classes.listCustomIconSub
       }
-      fontSize={level > 0 ? "inherit" : "default"}
+      fontSize={level > 0 ? 'inherit' : 'default'}
     />
   );
 
@@ -137,7 +137,7 @@ const NavCollapse = ({ menu, level }) => {
         <ListItemText
           primary={
             <Typography
-              variant={selected === menu.id ? "h5" : "body1"}
+              variant={selected === menu.id ? 'h5' : 'body1'}
               color="inherit"
               className={classes.listItemTypography}
             >

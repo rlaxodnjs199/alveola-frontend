@@ -1,11 +1,11 @@
 // ===========================|| DASHBOARD - BAJAJ AREA CHART ||=========================== //
 
 const chartData = {
-  type: "area",
+  type: 'area',
   height: 95,
   options: {
     chart: {
-      id: "support-chart",
+      id: 'support-chart',
       sparkline: {
         enabled: true,
       },
@@ -14,7 +14,7 @@ const chartData = {
       enabled: false,
     },
     stroke: {
-      curve: "smooth",
+      curve: 'smooth',
       width: 1,
     },
     tooltip: {
@@ -26,7 +26,7 @@ const chartData = {
       },
       y: {
         title: {
-          formatter: () => "Ticket ",
+          formatter: () => 'Ticket ',
         },
       },
       marker: {

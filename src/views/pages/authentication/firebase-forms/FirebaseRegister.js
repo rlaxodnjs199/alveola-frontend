@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 // material-ui
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from '@material-ui/styles';
 import {
   Box,
   Button,
@@ -20,54 +20,54 @@ import {
   TextField,
   Typography,
   useMediaQuery,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
 // third party
-import * as Yup from "yup";
-import { Formik } from "formik";
+import * as Yup from 'yup';
+import { Formik } from 'formik';
 
 // project imports
-import useScriptRef from "hooks/useScriptRef";
-import Google from "assets/images/icons/social-google.svg";
-import AnimateButton from "ui-component/extended/AnimateButton";
-import { strengthColor, strengthIndicator } from "utils/password-strength";
+import useScriptRef from 'hooks/useScriptRef';
+import Google from 'assets/images/icons/social-google.svg';
+import AnimateButton from 'ui-component/extended/AnimateButton';
+import { strengthColor, strengthIndicator } from 'utils/password-strength';
 
 // assets
-import Visibility from "@material-ui/icons/Visibility";
-import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
   redButton: {
-    fontSize: "1rem",
+    fontSize: '1rem',
     fontWeight: 500,
     backgroundColor: theme.palette.grey[50],
-    border: "1px solid",
+    border: '1px solid',
     borderColor: theme.palette.grey[100],
     color: theme.palette.grey[700],
-    textTransform: "none",
-    "&:hover": {
+    textTransform: 'none',
+    '&:hover': {
       backgroundColor: theme.palette.primary.light,
     },
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "0.875rem",
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.875rem',
     },
   },
   signDivider: {
     flexGrow: 1,
   },
   signText: {
-    cursor: "unset",
+    cursor: 'unset',
     margin: theme.spacing(2),
-    padding: "5px 56px",
+    padding: '5px 56px',
     borderColor: `${theme.palette.grey[100]} !important`,
     color: `${theme.palette.grey[900]}!important`,
     fontWeight: 500,
   },
   loginIcon: {
-    marginRight: "16px",
-    [theme.breakpoints.down("sm")]: {
-      marginRight: "8px",
+    marginRight: '16px',
+    [theme.breakpoints.down('sm')]: {
+      marginRight: '8px',
     },
   },
   loginInput: {
@@ -80,16 +80,16 @@ const useStyles = makeStyles((theme) => ({
 const FirebaseRegister = ({ ...others }) => {
   const classes = useStyles();
   const scriptedRef = useScriptRef();
-  const matchDownSM = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const matchDownSM = useMediaQuery((theme) => theme.breakpoints.down('sm'));
   const customization = useSelector((state) => state.customization);
   const [showPassword, setShowPassword] = React.useState(false);
   const [checked, setChecked] = React.useState(true);
 
   const [strength, setStrength] = React.useState(0);
-  const [level, setLevel] = React.useState("");
+  const [level, setLevel] = React.useState('');
 
   const googleHandler = async () => {
-    console.error("Register");
+    console.error('Register');
   };
 
   const handleClickShowPassword = () => {
@@ -107,7 +107,7 @@ const FirebaseRegister = ({ ...others }) => {
   };
 
   useEffect(() => {
-    changePassword("123456");
+    changePassword('123456');
   }, []);
 
   return (
@@ -129,7 +129,7 @@ const FirebaseRegister = ({ ...others }) => {
                 width="20px"
                 sx={{ mr: { xs: 1, sm: 2 } }}
                 className={classes.loginIcon}
-              />{" "}
+              />{' '}
               Sign up with Google
             </Button>
           </AnimateButton>
@@ -137,8 +137,8 @@ const FirebaseRegister = ({ ...others }) => {
         <Grid item xs={12}>
           <Box
             sx={{
-              alignItems: "center",
-              display: "flex",
+              alignItems: 'center',
+              display: 'flex',
             }}
           >
             <Divider className={classes.signDivider} orientation="horizontal" />
@@ -177,16 +177,16 @@ const FirebaseRegister = ({ ...others }) => {
 
       <Formik
         initialValues={{
-          email: "info@codedthemes.com",
-          password: "123456",
+          email: 'info@codedthemes.com',
+          password: '123456',
           submit: null,
         }}
         validationSchema={Yup.object().shape({
           email: Yup.string()
-            .email("Must be a valid email")
+            .email('Must be a valid email')
             .max(255)
-            .required("Email is required"),
-          password: Yup.string().max(255).required("Password is required"),
+            .required('Email is required'),
+          password: Yup.string().max(255).required('Password is required'),
         })}
         onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
           try {
@@ -264,8 +264,8 @@ const FirebaseRegister = ({ ...others }) => {
                   error
                   id="standard-weight-helper-text--register"
                 >
-                  {" "}
-                  {errors.email}{" "}
+                  {' '}
+                  {errors.email}{' '}
                 </FormHelperText>
               )}
             </FormControl>
@@ -280,7 +280,7 @@ const FirebaseRegister = ({ ...others }) => {
               </InputLabel>
               <OutlinedInput
                 id="outlined-adornment-password-register"
-                type={showPassword ? "text" : "password"}
+                type={showPassword ? 'text' : 'password'}
                 value={values.password}
                 name="password"
                 label="Password"
@@ -312,8 +312,8 @@ const FirebaseRegister = ({ ...others }) => {
                   error
                   id="standard-weight-helper-text-password-register"
                 >
-                  {" "}
-                  {errors.password}{" "}
+                  {' '}
+                  {errors.password}{' '}
                 </FormHelperText>
               )}
             </FormControl>
@@ -332,7 +332,7 @@ const FirebaseRegister = ({ ...others }) => {
                         sx={{
                           width: 85,
                           height: 8,
-                          borderRadius: "7px",
+                          borderRadius: '7px',
                         }}
                       />
                     </Grid>

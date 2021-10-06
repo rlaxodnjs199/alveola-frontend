@@ -1,9 +1,9 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 // material-ui
-import { makeStyles } from "@material-ui/styles";
-import MuiAvatar from "@material-ui/core/Avatar";
+import { makeStyles } from '@material-ui/styles';
+import MuiAvatar from '@material-ui/core/Avatar';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
@@ -112,7 +112,7 @@ const Avatar = ({ className, color, outline, size, ...others }) => {
     avatarClass = className ? [...avatarClass, className] : avatarClass;
   }
 
-  return <MuiAvatar className={avatarClass.join(" ")} {...others} />;
+  return <MuiAvatar className={avatarClass.join(' ')} {...others} />;
 };
 
 Avatar.propTypes = {

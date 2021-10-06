@@ -1,15 +1,15 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 // material-ui
-import { useTheme } from "@material-ui/styles";
-import { Box, Card, Grid, Typography } from "@material-ui/core";
+import { useTheme } from '@material-ui/styles';
+import { Box, Card, Grid, Typography } from '@material-ui/core';
 
 // project imports
-import SubCard from "ui-component/cards/SubCard";
-import MainCard from "ui-component/cards/MainCard";
-import SecondaryAction from "ui-component/cards/CardSecondaryAction";
-import { gridSpacing } from "store/constant";
+import SubCard from 'ui-component/cards/SubCard';
+import MainCard from 'ui-component/cards/MainCard';
+import SecondaryAction from 'ui-component/cards/CardSecondaryAction';
+import { gridSpacing } from 'store/constant';
 
 //= ==============================|| COLOR BOX ||===============================//
 
@@ -20,12 +20,12 @@ const ColorBox = ({ bgcolor, title, data, dark }) => {
       <Card sx={{ mb: 3 }}>
         <Box
           sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
             py: 4.5,
             bgcolor,
-            color: dark ? theme.palette.grey[800] : "#ffffff",
+            color: dark ? theme.palette.grey[800] : '#ffffff',
           }}
         >
           {title && (
@@ -42,7 +42,7 @@ const ColorBox = ({ bgcolor, title, data, dark }) => {
             <Typography variant="subtitle2">{data.label}</Typography>
           </Grid>
           <Grid item>
-            <Typography variant="subtitle1" sx={{ textTransform: "uppercase" }}>
+            <Typography variant="subtitle1" sx={{ textTransform: 'uppercase' }}>
               {data.color}
             </Typography>
           </Grid>
@@ -79,7 +79,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.primary.light}
                   data={{
-                    label: "Shade-50",
+                    label: 'Shade-50',
                     color: theme.palette.primary.light,
                   }}
                   title="primary.light"
@@ -90,7 +90,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.primary[200]}
                   data={{
-                    label: "Shade-200",
+                    label: 'Shade-200',
                     color: theme.palette.primary[200],
                   }}
                   title="primary[200]"
@@ -101,7 +101,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.primary.main}
                   data={{
-                    label: "Shade-500",
+                    label: 'Shade-500',
                     color: theme.palette.primary.main,
                   }}
                   title="primary.main"
@@ -111,7 +111,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.primary.dark}
                   data={{
-                    label: "Shade-600",
+                    label: 'Shade-600',
                     color: theme.palette.primary.dark,
                   }}
                   title="primary.dark"
@@ -121,7 +121,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.primary[800]}
                   data={{
-                    label: "Shade-800",
+                    label: 'Shade-800',
                     color: theme.palette.primary[800],
                   }}
                   title="primary[800]"
@@ -137,7 +137,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.secondary.light}
                   data={{
-                    label: "Shade-50",
+                    label: 'Shade-50',
                     color: theme.palette.secondary.light,
                   }}
                   title="secondary.light"
@@ -148,7 +148,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.secondary[200]}
                   data={{
-                    label: "Shade-200",
+                    label: 'Shade-200',
                     color: theme.palette.secondary[200],
                   }}
                   title="secondary[200]"
@@ -159,7 +159,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.secondary.main}
                   data={{
-                    label: "Shade-500",
+                    label: 'Shade-500',
                     color: theme.palette.secondary.main,
                   }}
                   title="secondary.main"
@@ -169,7 +169,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.secondary.dark}
                   data={{
-                    label: "Shade-600",
+                    label: 'Shade-600',
                     color: theme.palette.secondary.dark,
                   }}
                   title="secondary.dark"
@@ -179,7 +179,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.secondary[800]}
                   data={{
-                    label: "Shade-800",
+                    label: 'Shade-800',
                     color: theme.palette.secondary[800],
                   }}
                   title="secondary[800]"
@@ -195,7 +195,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.success.light}
                   data={{
-                    label: "Shade-100",
+                    label: 'Shade-100',
                     color: theme.palette.success.light,
                   }}
                   title="success.light"
@@ -206,7 +206,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.success[200]}
                   data={{
-                    label: "Shade-200",
+                    label: 'Shade-200',
                     color: theme.palette.success[200],
                   }}
                   title="success[200]"
@@ -216,7 +216,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.success.main}
                   data={{
-                    label: "Shade-400",
+                    label: 'Shade-400',
                     color: theme.palette.success.main,
                   }}
                   title="success.main"
@@ -226,7 +226,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.success.dark}
                   data={{
-                    label: "Shade-700",
+                    label: 'Shade-700',
                     color: theme.palette.success.dark,
                   }}
                   title="success.dark"
@@ -242,7 +242,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.orange.light}
                   data={{
-                    label: "Shade-50",
+                    label: 'Shade-50',
                     color: theme.palette.orange.light,
                   }}
                   title="orange.light"
@@ -253,7 +253,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.orange.main}
                   data={{
-                    label: "Shade-200",
+                    label: 'Shade-200',
                     color: theme.palette.orange.main,
                   }}
                   title="orange.main"
@@ -263,7 +263,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.orange.dark}
                   data={{
-                    label: "Shade-800",
+                    label: 'Shade-800',
                     color: theme.palette.orange.dark,
                   }}
                   title="orange.dark"
@@ -278,7 +278,7 @@ const UIColor = () => {
               <Grid item xs={12} sm={6} md={4} lg={2}>
                 <ColorBox
                   bgcolor={theme.palette.error.light}
-                  data={{ label: "Shade-50", color: theme.palette.error.light }}
+                  data={{ label: 'Shade-50', color: theme.palette.error.light }}
                   title="error.light"
                   dark
                 />
@@ -286,14 +286,14 @@ const UIColor = () => {
               <Grid item xs={12} sm={6} md={4} lg={2}>
                 <ColorBox
                   bgcolor={theme.palette.error.main}
-                  data={{ label: "Shade-200", color: theme.palette.error.main }}
+                  data={{ label: 'Shade-200', color: theme.palette.error.main }}
                   title="error.main"
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4} lg={2}>
                 <ColorBox
                   bgcolor={theme.palette.error.dark}
-                  data={{ label: "Shade-800", color: theme.palette.error.dark }}
+                  data={{ label: 'Shade-800', color: theme.palette.error.dark }}
                   title="error.dark"
                 />
               </Grid>
@@ -307,7 +307,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.warning.light}
                   data={{
-                    label: "Shade-50",
+                    label: 'Shade-50',
                     color: theme.palette.warning.light,
                   }}
                   title="warning.light"
@@ -318,7 +318,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.warning.main}
                   data={{
-                    label: "Shade-100",
+                    label: 'Shade-100',
                     color: theme.palette.warning.main,
                   }}
                   title="warning.main"
@@ -329,7 +329,7 @@ const UIColor = () => {
                 <ColorBox
                   bgcolor={theme.palette.warning.dark}
                   data={{
-                    label: "Shade-500",
+                    label: 'Shade-500',
                     color: theme.palette.warning.dark,
                   }}
                   title="warning.dark"
@@ -344,7 +344,7 @@ const UIColor = () => {
               <Grid item xs={12} sm={6} md={4} lg={2}>
                 <ColorBox
                   bgcolor={theme.palette.grey[50]}
-                  data={{ label: "Shade-50", color: theme.palette.grey[50] }}
+                  data={{ label: 'Shade-50', color: theme.palette.grey[50] }}
                   title="grey[50]"
                   dark
                 />
@@ -352,7 +352,7 @@ const UIColor = () => {
               <Grid item xs={12} sm={6} md={4} lg={2}>
                 <ColorBox
                   bgcolor={theme.palette.grey[100]}
-                  data={{ label: "Shade-100", color: theme.palette.grey[100] }}
+                  data={{ label: 'Shade-100', color: theme.palette.grey[100] }}
                   title="grey[100]"
                   dark
                 />
@@ -360,7 +360,7 @@ const UIColor = () => {
               <Grid item xs={12} sm={6} md={4} lg={2}>
                 <ColorBox
                   bgcolor={theme.palette.grey[200]}
-                  data={{ label: "Shade-200", color: theme.palette.grey[200] }}
+                  data={{ label: 'Shade-200', color: theme.palette.grey[200] }}
                   title="grey[200]"
                   dark
                 />
@@ -368,7 +368,7 @@ const UIColor = () => {
               <Grid item xs={12} sm={6} md={4} lg={2}>
                 <ColorBox
                   bgcolor={theme.palette.grey[300]}
-                  data={{ label: "Shade-300", color: theme.palette.grey[300] }}
+                  data={{ label: 'Shade-300', color: theme.palette.grey[300] }}
                   title="grey[300]"
                   dark
                 />
@@ -376,35 +376,35 @@ const UIColor = () => {
               <Grid item xs={12} sm={6} md={4} lg={2}>
                 <ColorBox
                   bgcolor={theme.palette.grey[500]}
-                  data={{ label: "Shade-500", color: theme.palette.grey[500] }}
+                  data={{ label: 'Shade-500', color: theme.palette.grey[500] }}
                   title="grey[500]"
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4} lg={2}>
                 <ColorBox
                   bgcolor={theme.palette.grey[600]}
-                  data={{ label: "Shade-600", color: theme.palette.grey[600] }}
+                  data={{ label: 'Shade-600', color: theme.palette.grey[600] }}
                   title="grey[600]"
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4} lg={2}>
                 <ColorBox
                   bgcolor={theme.palette.grey[700]}
-                  data={{ label: "Shade-700", color: theme.palette.grey[700] }}
+                  data={{ label: 'Shade-700', color: theme.palette.grey[700] }}
                   title="grey[700]"
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4} lg={2}>
                 <ColorBox
                   bgcolor={theme.palette.grey[900]}
-                  data={{ label: "Shade-900", color: theme.palette.grey[900] }}
+                  data={{ label: 'Shade-900', color: theme.palette.grey[900] }}
                   title="grey[900]"
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4} lg={2}>
                 <ColorBox
                   bgcolor="#fff"
-                  data={{ label: "Pure White", color: "#ffffff" }}
+                  data={{ label: 'Pure White', color: '#ffffff' }}
                   title="Pure White"
                   dark
                 />

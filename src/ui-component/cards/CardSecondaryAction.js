@@ -1,12 +1,12 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 // material-ui
-import { useTheme } from "@material-ui/styles";
-import { ButtonBase, Link, Tooltip } from "@material-ui/core";
+import { useTheme } from '@material-ui/styles';
+import { ButtonBase, Link, Tooltip } from '@material-ui/core';
 
 // project imports
-import Avatar from "../extended/Avatar";
+import Avatar from '../extended/Avatar';
 
 // ===========================|| CARD SECONDARY ACTION ||=========================== //
 
@@ -14,7 +14,7 @@ const CardSecondaryAction = ({ title, link, icon }) => {
   const theme = useTheme();
 
   return (
-    <Tooltip title={title || "Reference"} placement="left">
+    <Tooltip title={title || 'Reference'} placement="left">
       <ButtonBase disableRipple>
         {!icon && (
           <Avatar

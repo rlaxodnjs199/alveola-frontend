@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 
 // material-ui
-import { makeStyles } from "@material-ui/styles";
-import LinearProgress from "@material-ui/core/LinearProgress";
+import { makeStyles } from '@material-ui/styles';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
   root: {
-    position: "fixed",
+    position: 'fixed',
     top: 0,
     left: 0,
     zIndex: 1301,
-    width: "100%",
-    "& > * + *": {
+    width: '100%',
+    '& > * + *': {
       marginTop: theme.spacing(2),
     },
   },

@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 
 // material-ui
-import { makeStyles } from "@material-ui/styles";
-import { Card, CardContent, Grid, Skeleton } from "@material-ui/core";
+import { makeStyles } from '@material-ui/styles';
+import { Card, CardContent, Grid, Skeleton } from '@material-ui/core';
 
 // style constant
 const useStyles = makeStyles({
   cardHeading: {
-    marginRight: "8px",
-    marginTop: "18px",
-    marginBottom: "14px",
+    marginRight: '8px',
+    marginTop: '18px',
+    marginBottom: '14px',
   },
 });
 

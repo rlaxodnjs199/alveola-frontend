@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 
 // material-ui
-import { Typography } from "@material-ui/core";
+import { Typography } from '@material-ui/core';
 
 // project imports
-import NavGroup from "./NavGroup";
-import menuItem from "menu-items";
+import menuItem from 'menu-items';
+import NavGroup from './NavGroup';
 
 // ===========================|| SIDEBAR MENU LIST ||=========================== //
 
 const MenuList = () => {
   const navItems = menuItem.items.map((item) => {
     switch (item.type) {
-      case "group":
+      case 'group':
         return <NavGroup key={item.id} item={item} />;
       default:
         return (

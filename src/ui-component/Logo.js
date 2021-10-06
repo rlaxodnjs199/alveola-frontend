@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 // assets
-import logo from "assets/images/logo.svg";
+import logo from 'assets/images/logo.svg';
 
 // ===========================|| LOGO SVG ||=========================== //
 

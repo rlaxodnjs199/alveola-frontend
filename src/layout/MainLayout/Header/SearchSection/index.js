@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 // material-ui
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from '@material-ui/styles';
 import {
   Avatar,
   Box,
@@ -12,39 +12,39 @@ import {
   InputAdornment,
   OutlinedInput,
   Popper,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
 // third-party
-import PopupState, { bindPopper, bindToggle } from "material-ui-popup-state";
+import PopupState, { bindPopper, bindToggle } from 'material-ui-popup-state';
 
 // project imports
-import Transitions from "ui-component/extended/Transitions";
+import Transitions from 'ui-component/extended/Transitions';
 
 // assets
-import { IconAdjustmentsHorizontal, IconSearch, IconX } from "@tabler/icons";
+import { IconAdjustmentsHorizontal, IconSearch, IconX } from '@tabler/icons';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
   searchControl: {
-    width: "434px",
-    marginLeft: "16px",
-    paddingRight: "16px",
-    paddingLeft: "16px",
-    "& input": {
-      background: "transparent !important",
-      paddingLeft: "5px !important",
+    width: '434px',
+    marginLeft: '16px',
+    paddingRight: '16px',
+    paddingLeft: '16px',
+    '& input': {
+      background: 'transparent !important',
+      paddingLeft: '5px !important',
     },
-    [theme.breakpoints.down("lg")]: {
-      width: "250px",
+    [theme.breakpoints.down('lg')]: {
+      width: '250px',
     },
-    [theme.breakpoints.down("md")]: {
-      width: "100%",
-      marginLeft: "4px",
-      background: "#fff",
+    [theme.breakpoints.down('md')]: {
+      width: '100%',
+      marginLeft: '4px',
+      background: '#fff',
     },
   },
   startAdornment: {
-    fontSize: "1rem",
+    fontSize: '1rem',
     color: theme.palette.grey[500],
   },
   headerAvatar: {
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     ...theme.typography.mediumAvatar,
     background: theme.palette.secondary.light,
     color: theme.palette.secondary.dark,
-    "&:hover": {
+    '&:hover': {
       background: theme.palette.secondary.dark,
       color: theme.palette.secondary.light,
     },
@@ -62,28 +62,28 @@ const useStyles = makeStyles((theme) => ({
     ...theme.typography.mediumAvatar,
     background: theme.palette.orange.light,
     color: theme.palette.orange.dark,
-    "&:hover": {
+    '&:hover': {
       background: theme.palette.orange.dark,
       color: theme.palette.orange.light,
     },
   },
   popperContainer: {
     zIndex: 1100,
-    width: "99%",
-    top: "-55px !important",
-    padding: "0 12px",
-    [theme.breakpoints.down("sm")]: {
-      padding: "0 10px",
+    width: '99%',
+    top: '-55px !important',
+    padding: '0 12px',
+    [theme.breakpoints.down('sm')]: {
+      padding: '0 10px',
     },
   },
   cardContent: {
-    padding: "12px !important",
+    padding: '12px !important',
   },
   card: {
-    background: "#fff",
-    [theme.breakpoints.down("sm")]: {
+    background: '#fff',
+    [theme.breakpoints.down('sm')]: {
       border: 0,
-      boxShadow: "none",
+      boxShadow: 'none',
     },
   },
 }));
@@ -92,11 +92,11 @@ const useStyles = makeStyles((theme) => ({
 
 const SearchSection = () => {
   const classes = useStyles();
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
 
   return (
     <>
-      <Box sx={{ display: { xs: "block", md: "none" } }}>
+      <Box sx={{ display: { xs: 'block', md: 'none' } }}>
         <PopupState variant="popper" popupId="demo-popup-popper">
           {(popupState) => (
             <>
@@ -105,7 +105,7 @@ const SearchSection = () => {
                   ml: 2,
                 }}
               >
-                <ButtonBase sx={{ borderRadius: "12px" }}>
+                <ButtonBase sx={{ borderRadius: '12px' }}>
                   <Avatar
                     variant="rounded"
                     className={classes.headerAvatar}
@@ -124,7 +124,7 @@ const SearchSection = () => {
                   <Transitions
                     type="zoom"
                     {...TransitionProps}
-                    sx={{ transformOrigin: "center left" }}
+                    sx={{ transformOrigin: 'center left' }}
                   >
                     <Card className={classes.card}>
                       <CardContent className={classes.cardContent}>
@@ -151,7 +151,7 @@ const SearchSection = () => {
                               }
                               endAdornment={
                                 <InputAdornment position="end">
-                                  <ButtonBase sx={{ borderRadius: "12px" }}>
+                                  <ButtonBase sx={{ borderRadius: '12px' }}>
                                     <Avatar
                                       variant="rounded"
                                       className={classes.headerAvatar}
@@ -167,7 +167,7 @@ const SearchSection = () => {
                                       ml: 2,
                                     }}
                                   >
-                                    <ButtonBase sx={{ borderRadius: "12px" }}>
+                                    <ButtonBase sx={{ borderRadius: '12px' }}>
                                       <Avatar
                                         variant="rounded"
                                         className={classes.closeAvatar}
@@ -181,7 +181,7 @@ const SearchSection = () => {
                               }
                               aria-describedby="search-helper-text"
                               inputProps={{
-                                "aria-label": "weight",
+                                'aria-label': 'weight',
                               }}
                             />
                           </Grid>
@@ -195,7 +195,7 @@ const SearchSection = () => {
           )}
         </PopupState>
       </Box>
-      <Box sx={{ display: { xs: "none", md: "block" } }}>
+      <Box sx={{ display: { xs: 'none', md: 'block' } }}>
         <OutlinedInput
           className={classes.searchControl}
           id="input-search-header"
@@ -213,7 +213,7 @@ const SearchSection = () => {
           }
           endAdornment={
             <InputAdornment position="end">
-              <ButtonBase sx={{ borderRadius: "12px" }}>
+              <ButtonBase sx={{ borderRadius: '12px' }}>
                 <Avatar variant="rounded" className={classes.headerAvatar}>
                   <IconAdjustmentsHorizontal stroke={1.5} size="1.3rem" />
                 </Avatar>
@@ -222,7 +222,7 @@ const SearchSection = () => {
           }
           aria-describedby="search-helper-text"
           inputProps={{
-            "aria-label": "weight",
+            'aria-label': 'weight',
           }}
         />
       </Box>

@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 // third-party
-import { motion, useCycle } from "framer-motion";
+import { motion, useCycle } from 'framer-motion';
 
 // ===========================|| ANIMATION BUTTON ||=========================== //
 
@@ -11,13 +11,13 @@ const AnimateButton = React.forwardRef(
     let offset1;
     let offset2;
     switch (direction) {
-      case "up":
-      case "left":
+      case 'up':
+      case 'left':
         offset1 = offset;
         offset2 = 0;
         break;
-      case "right":
-      case "dow":
+      case 'right':
+      case 'dow':
       default:
         offset1 = 0;
         offset2 = offset;
@@ -28,14 +28,14 @@ const AnimateButton = React.forwardRef(
     const [y, cycleY] = useCycle(offset1, offset2);
 
     switch (type) {
-      case "rotate":
+      case 'rotate':
         return (
           <motion.div
             ref={ref}
             animate={{ rotate: 360 }}
             transition={{
               repeat: Infinity,
-              repeatType: "loop",
+              repeatType: 'loop',
               duration: 2,
               repeatDelay: 0,
             }}
@@ -43,8 +43,8 @@ const AnimateButton = React.forwardRef(
             {children}
           </motion.div>
         );
-      case "slide":
-        if (direction === "up" || direction === "down") {
+      case 'slide':
+        if (direction === 'up' || direction === 'down') {
           return (
             <motion.div
               ref={ref}
@@ -67,9 +67,9 @@ const AnimateButton = React.forwardRef(
           </motion.div>
         );
 
-      case "scale":
+      case 'scale':
       default:
-        if (typeof scale === "number") {
+        if (typeof scale === 'number') {
           scale = {
             hover: scale,
             tap: scale,
@@ -91,15 +91,15 @@ const AnimateButton = React.forwardRef(
 AnimateButton.propTypes = {
   children: PropTypes.node,
   offset: PropTypes.number,
-  type: PropTypes.oneOf(["slide", "scale", "rotate"]),
-  direction: PropTypes.oneOf(["up", "down", "left", "right"]),
+  type: PropTypes.oneOf(['slide', 'scale', 'rotate']),
+  direction: PropTypes.oneOf(['up', 'down', 'left', 'right']),
   scale: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
 };
 
 AnimateButton.defaultProps = {
-  type: "scale",
+  type: 'scale',
   offset: 10,
-  direction: "right",
+  direction: 'right',
   scale: {
     hover: 1,
     tap: 0.9,

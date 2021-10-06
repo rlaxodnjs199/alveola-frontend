@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 // material-ui
 import {
@@ -8,39 +8,39 @@ import {
   TextField,
   Typography,
   useTheme,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
 // third-party
-import ApexCharts from "apexcharts";
-import Chart from "react-apexcharts";
+import ApexCharts from 'apexcharts';
+import Chart from 'react-apexcharts';
 
 // project imports
-import SkeletonTotalGrowthBarChart from "ui-component/cards/Skeleton/TotalGrowthBarChart";
-import MainCard from "ui-component/cards/MainCard";
-import { gridSpacing } from "store/constant";
+import SkeletonTotalGrowthBarChart from 'ui-component/cards/Skeleton/TotalGrowthBarChart';
+import MainCard from 'ui-component/cards/MainCard';
+import { gridSpacing } from 'store/constant';
 
 // chart data
-import chartData from "./chart-data/total-growth-bar-chart";
+import chartData from './chart-data/total-growth-bar-chart';
 
 const status = [
   {
-    value: "today",
-    label: "Today",
+    value: 'today',
+    label: 'Today',
   },
   {
-    value: "month",
-    label: "This Month",
+    value: 'month',
+    label: 'This Month',
   },
   {
-    value: "year",
-    label: "This Year",
+    value: 'year',
+    label: 'This Year',
   },
 ];
 
 // ===========================|| DASHBOARD DEFAULT - TOTAL GROWTH BAR CHART ||=========================== //
 
 const TotalGrowthBarChart = ({ isLoading }) => {
-  const [value, setValue] = React.useState("today");
+  const [value, setValue] = React.useState('today');
   const theme = useTheme();
 
   const { primary } = theme.palette.text;
@@ -87,7 +87,7 @@ const TotalGrowthBarChart = ({ isLoading }) => {
         borderColor: grey200,
       },
       tooltip: {
-        theme: "light",
+        theme: 'light',
       },
       legend: {
         labels: {
@@ -98,7 +98,7 @@ const TotalGrowthBarChart = ({ isLoading }) => {
 
     // do not load chart when loading
     if (!isLoading) {
-      ApexCharts.exec(`bar-chart`, "updateOptions", newChartData);
+      ApexCharts.exec(`bar-chart`, 'updateOptions', newChartData);
     }
   }, [
     primary200,

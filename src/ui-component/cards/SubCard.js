@@ -1,15 +1,15 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 // material-ui
-import { useTheme } from "@material-ui/styles";
+import { useTheme } from '@material-ui/styles';
 import {
   Card,
   CardContent,
   CardHeader,
   Divider,
   Typography,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
 // ===========================|| CUSTOM SUB CARD ||=========================== //
 
@@ -28,10 +28,10 @@ const SubCard = ({
   return (
     <Card
       sx={{
-        border: "1px solid",
+        border: '1px solid',
         borderColor: theme.palette.primary.light,
-        ":hover": {
-          boxShadow: "0 2px 14px 0 rgb(32 40 45 / 8%)",
+        ':hover': {
+          boxShadow: '0 2px 14px 0 rgb(32 40 45 / 8%)',
         },
         ...sx,
       }}

@@ -1,97 +1,97 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 // material-ui
-import { makeStyles } from "@material-ui/styles";
-import { Avatar, Button, Grid, Typography } from "@material-ui/core";
+import { makeStyles } from '@material-ui/styles';
+import { Avatar, Button, Grid, Typography } from '@material-ui/core';
 
 // third-party
-import Chart from "react-apexcharts";
-
-// project imports
-import MainCard from "ui-component/cards/MainCard";
-import SkeletonTotalOrderCard from "ui-component/cards/Skeleton/EarningCard";
-
-import ChartDataMonth from "./chart-data/total-order-month-line-chart";
-import ChartDataYear from "./chart-data/total-order-year-line-chart";
+import Chart from 'react-apexcharts';
 
 // assets
-import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
-import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
+import LocalMallOutlinedIcon from '@material-ui/icons/LocalMallOutlined';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+
+// project imports
+import MainCard from 'ui-component/cards/MainCard';
+import SkeletonTotalOrderCard from 'ui-component/cards/Skeleton/EarningCard';
+
+import ChartDataMonth from './chart-data/total-order-month-line-chart';
+import ChartDataYear from './chart-data/total-order-year-line-chart';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
   card: {
     backgroundColor: theme.palette.primary.dark,
-    color: "#fff",
-    overflow: "hidden",
-    position: "relative",
-    "&>div": {
-      position: "relative",
+    color: '#fff',
+    overflow: 'hidden',
+    position: 'relative',
+    '&>div': {
+      position: 'relative',
       zIndex: 5,
     },
-    "&:after": {
+    '&:after': {
       content: '""',
-      position: "absolute",
-      width: "210px",
-      height: "210px",
+      position: 'absolute',
+      width: '210px',
+      height: '210px',
       background: theme.palette.primary[800],
-      borderRadius: "50%",
+      borderRadius: '50%',
       zIndex: 1,
-      top: "-85px",
-      right: "-95px",
-      [theme.breakpoints.down("xs")]: {
-        top: "-105px",
-        right: "-140px",
+      top: '-85px',
+      right: '-95px',
+      [theme.breakpoints.down('xs')]: {
+        top: '-105px',
+        right: '-140px',
       },
     },
-    "&:before": {
+    '&:before': {
       content: '""',
-      position: "absolute",
+      position: 'absolute',
       zIndex: 1,
-      width: "210px",
-      height: "210px",
+      width: '210px',
+      height: '210px',
       background: theme.palette.primary[800],
-      borderRadius: "50%",
-      top: "-125px",
-      right: "-15px",
+      borderRadius: '50%',
+      top: '-125px',
+      right: '-15px',
       opacity: 0.5,
-      [theme.breakpoints.down("xs")]: {
-        top: "-155px",
-        right: "-70px",
+      [theme.breakpoints.down('xs')]: {
+        top: '-155px',
+        right: '-70px',
       },
     },
   },
   content: {
-    padding: "20px !important",
+    padding: '20px !important',
   },
   avatar: {
     ...theme.typography.commonAvatar,
     ...theme.typography.largeAvatar,
     backgroundColor: theme.palette.primary[800],
-    color: "#fff",
-    marginTop: "8px",
+    color: '#fff',
+    marginTop: '8px',
   },
   cardHeading: {
-    fontSize: "2.125rem",
+    fontSize: '2.125rem',
     fontWeight: 500,
-    marginRight: "8px",
-    marginTop: "14px",
-    marginBottom: "6px",
+    marginRight: '8px',
+    marginTop: '14px',
+    marginBottom: '6px',
   },
   subHeading: {
-    fontSize: "1rem",
+    fontSize: '1rem',
     fontWeight: 500,
     color: theme.palette.primary[200],
   },
   avatarCircle: {
     ...theme.typography.smallAvatar,
-    cursor: "pointer",
+    cursor: 'pointer',
     backgroundColor: theme.palette.primary[200],
     color: theme.palette.primary.dark,
   },
   circleIcon: {
-    transform: "rotate3d(1, 1, 1, 45deg)",
+    transform: 'rotate3d(1, 1, 1, 45deg)',
   },
 }));
 
@@ -126,7 +126,7 @@ const TotalOrderLineChartCard = ({ isLoading }) => {
                 <Grid item>
                   <Button
                     disableElevation
-                    variant={timeValue ? "contained" : "string"}
+                    variant={timeValue ? 'contained' : 'string'}
                     size="small"
                     onClick={(e) => handleChangeTime(e, true)}
                   >
@@ -134,7 +134,7 @@ const TotalOrderLineChartCard = ({ isLoading }) => {
                   </Button>
                   <Button
                     disableElevation
-                    variant={!timeValue ? "contained" : "string"}
+                    variant={!timeValue ? 'contained' : 'string'}
                     size="small"
                     onClick={(e) => handleChangeTime(e, false)}
                   >

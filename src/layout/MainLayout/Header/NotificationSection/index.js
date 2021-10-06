@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 // material-ui
-import { makeStyles, useTheme } from "@material-ui/styles";
+import { makeStyles, useTheme } from '@material-ui/styles';
 import {
   Avatar,
   Box,
@@ -20,30 +20,30 @@ import {
   TextField,
   Typography,
   useMediaQuery,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
 // third-party
-import PerfectScrollbar from "react-perfect-scrollbar";
-
-// project imports
-import MainCard from "ui-component/cards/MainCard";
-import Transitions from "ui-component/extended/Transitions";
-import NotificationList from "./NotificationList";
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
 // assets
-import { IconBell } from "@tabler/icons";
+import { IconBell } from '@tabler/icons';
+
+// project imports
+import MainCard from 'ui-component/cards/MainCard';
+import Transitions from 'ui-component/extended/Transitions';
+import NotificationList from './NotificationList';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
   ScrollHeight: {
-    height: "100%",
-    maxHeight: "calc(100vh - 205px)",
-    overflowX: "hidden",
+    height: '100%',
+    maxHeight: 'calc(100vh - 205px)',
+    overflowX: 'hidden',
   },
   headerAvatar: {
     ...theme.typography.commonAvatar,
     ...theme.typography.mediumAvatar,
-    transition: "all .2s ease-in-out",
+    transition: 'all .2s ease-in-out',
     background: theme.palette.secondary.light,
     color: theme.palette.secondary.dark,
     '&[aria-controls="menu-list-grow"],&:hover': {
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   cardContent: {
-    padding: "0px !important",
+    padding: '0px !important',
   },
   notificationChip: {
     color: theme.palette.background.default,
@@ -63,44 +63,44 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 0,
   },
   cardAction: {
-    padding: "10px",
-    justifyContent: "center",
+    padding: '10px',
+    justifyContent: 'center',
   },
   paddingBottom: {
-    paddingBottom: "16px",
+    paddingBottom: '16px',
   },
   box: {
-    marginLeft: "16px",
-    marginRight: "24px",
-    [theme.breakpoints.down("sm")]: {
-      marginRight: "16px",
+    marginLeft: '16px',
+    marginRight: '24px',
+    [theme.breakpoints.down('sm')]: {
+      marginRight: '16px',
     },
   },
   bodyPPacing: {
-    padding: "16px 16px 0",
+    padding: '16px 16px 0',
   },
   textBoxSpacing: {
-    padding: "0px 16px",
+    padding: '0px 16px',
   },
 }));
 
 // notification status options
 const status = [
   {
-    value: "all",
-    label: "All Notification",
+    value: 'all',
+    label: 'All Notification',
   },
   {
-    value: "new",
-    label: "New",
+    value: 'new',
+    label: 'New',
   },
   {
-    value: "unread",
-    label: "Unread",
+    value: 'unread',
+    label: 'Unread',
   },
   {
-    value: "other",
-    label: "Other",
+    value: 'other',
+    label: 'Other',
   },
 ];
 
@@ -109,10 +109,10 @@ const status = [
 const NotificationSection = () => {
   const classes = useStyles();
   const theme = useTheme();
-  const matchesXs = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesXs = useMediaQuery(theme.breakpoints.down('sm'));
 
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
+  const [value, setValue] = React.useState('');
   const anchorRef = React.useRef(null);
 
   const handleToggle = () => {
@@ -141,12 +141,12 @@ const NotificationSection = () => {
   return (
     <>
       <Box component="span" className={classes.box}>
-        <ButtonBase sx={{ borderRadius: "12px" }}>
+        <ButtonBase sx={{ borderRadius: '12px' }}>
           <Avatar
             variant="rounded"
             className={classes.headerAvatar}
             ref={anchorRef}
-            aria-controls={open ? "menu-list-grow" : undefined}
+            aria-controls={open ? 'menu-list-grow' : undefined}
             aria-haspopup="true"
             onClick={handleToggle}
             color="inherit"
@@ -156,7 +156,7 @@ const NotificationSection = () => {
         </ButtonBase>
       </Box>
       <Popper
-        placement={matchesXs ? "bottom" : "bottom-end"}
+        placement={matchesXs ? 'bottom' : 'bottom-end'}
         open={open}
         anchorEl={anchorRef.current}
         role={undefined}
@@ -165,7 +165,7 @@ const NotificationSection = () => {
         popperOptions={{
           modifiers: [
             {
-              name: "offset",
+              name: 'offset',
               options: {
                 offset: [matchesXs ? 5 : 0, 20],
               },

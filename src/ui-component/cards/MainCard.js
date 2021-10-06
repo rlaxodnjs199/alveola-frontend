@@ -1,19 +1,19 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 // material-ui
-import { useTheme } from "@material-ui/styles";
+import { useTheme } from '@material-ui/styles';
 import {
   Card,
   CardContent,
   CardHeader,
   Divider,
   Typography,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
 // constant
 const headerSX = {
-  "& .MuiCardHeader-action": { mr: 0 },
+  '& .MuiCardHeader-action': { mr: 0 },
 };
 
 // ===========================|| CUSTOM MAIN CARD ||=========================== //
@@ -43,12 +43,12 @@ const MainCard = React.forwardRef(
         ref={ref}
         {...others}
         sx={{
-          border: border ? "1px solid" : "none",
+          border: border ? '1px solid' : 'none',
           borderColor: theme.palette.primary[200] + 75,
-          ":hover": {
+          ':hover': {
             boxShadow: boxShadow
-              ? shadow || "0 2px 14px 0 rgb(32 40 45 / 8%)"
-              : "inherit",
+              ? shadow || '0 2px 14px 0 rgb(32 40 45 / 8%)'
+              : 'inherit',
           },
           ...sx,
         }}

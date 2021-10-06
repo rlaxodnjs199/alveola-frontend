@@ -1,37 +1,37 @@
-import React from "react";
-import useSWR from "swr";
+import React from 'react';
+import useSWR from 'swr';
 
 // material-ui
-import { DataGrid } from "@mui/x-data-grid";
-import { Typography } from "@material-ui/core";
+import { DataGrid } from '@mui/x-data-grid';
+import { Typography } from '@material-ui/core';
 
 // project imports
-import { apiFetcher } from "services/api";
-import { constructRowsFromData } from "utils/parse-ctscanlist";
-import MainCard from "ui-component/cards/MainCard";
-import Loader from "ui-component/Loader";
+import apiFetcher from 'services/api';
+import { constructRowsFromData } from 'utils/parse-ctscanlist';
+import MainCard from 'ui-component/cards/MainCard';
+import Loader from 'ui-component/Loader';
 
 //= =============================|| SAMPLE PAGE ||==============================//
 
 const CTScanPage = () => {
-  const { data } = useSWR("http://localhost:8000/ct-scans/raw", apiFetcher);
-  if (!data) return <Loader></Loader>;
+  const { data } = useSWR('http://localhost:8000/ct-scans/raw', apiFetcher);
+  if (!data) return <Loader />;
 
   const columns = [
-    { field: "id", width: 100, headerName: "ID" },
+    { field: 'id', width: 100, headerName: 'ID' },
     {
-      field: "project",
-      headerName: "Project",
+      field: 'project',
+      headerName: 'Project',
       width: 170,
     },
     {
-      field: "acquisition_date",
-      headerName: "Acquisition Date",
+      field: 'acquisition_date',
+      headerName: 'Acquisition Date',
       width: 250,
     },
     {
-      field: "worker",
-      headerName: "Worker",
+      field: 'worker',
+      headerName: 'Worker',
       width: 170,
     },
   ];
@@ -47,10 +47,10 @@ const CTScanPage = () => {
       </MainCard>
       <div
         style={{
-          marginTop: "2vh",
+          marginTop: '2vh',
           maxHeight: 700,
           width: 850,
-          background: "white",
+          background: 'white',
         }}
       >
         <DataGrid
@@ -60,7 +60,7 @@ const CTScanPage = () => {
           rowsPerPageOptions={[5]}
           checkboxSelection
           disableSelectionOnClick
-          autoHeight={true}
+          autoHeight
         />
       </div>
     </div>

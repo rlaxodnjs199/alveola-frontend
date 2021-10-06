@@ -1,10 +1,10 @@
-import PropTypes from "prop-types";
-import React from "react";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 // material-ui
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from '@material-ui/styles';
 import {
   Avatar,
   Chip,
@@ -12,40 +12,40 @@ import {
   ListItemText,
   Typography,
   useMediaQuery,
-} from "@material-ui/core";
-import ListItemButton from "@material-ui/core/ListItemButton";
+} from '@material-ui/core';
+import ListItemButton from '@material-ui/core/ListItemButton';
 
 // project imports
-import { MENU_OPEN, SET_MENU } from "store/actions";
+import { MENU_OPEN, SET_MENU } from 'store/actions';
 
 // assets
-import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
   listIcon: {
-    minWidth: "18px",
-    marginTop: "auto",
-    marginBottom: "auto",
+    minWidth: '18px',
+    marginTop: 'auto',
+    marginBottom: 'auto',
   },
   listCustomIconSub: {
-    width: "6px",
-    height: "6px",
+    width: '6px',
+    height: '6px',
   },
   listCustomIconSubActive: {
-    width: "8px",
-    height: "8px",
+    width: '8px',
+    height: '8px',
   },
   listItem: {
-    marginBottom: "5px",
-    alignItems: "center",
+    marginBottom: '5px',
+    alignItems: 'center',
   },
   listItemNoBack: {
-    marginBottom: "5px",
-    backgroundColor: "transparent !important",
-    paddingTop: "8px",
-    paddingBottom: "8px",
-    alignItems: "flex-start",
+    marginBottom: '5px',
+    backgroundColor: 'transparent !important',
+    paddingTop: '8px',
+    paddingBottom: '8px',
+    alignItems: 'flex-start',
   },
   subMenuCaption: {
     ...theme.typography.subMenuCaption,
@@ -58,7 +58,7 @@ const NavItem = ({ item, level }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const customization = useSelector((state) => state.customization);
-  const matchesSM = useMediaQuery((theme) => theme.breakpoints.down("md"));
+  const matchesSM = useMediaQuery((theme) => theme.breakpoints.down('md'));
 
   const Icon = item.icon;
   const itemIcon = item.icon ? (
@@ -70,19 +70,19 @@ const NavItem = ({ item, level }) => {
           ? classes.listCustomIconSubActive
           : classes.listCustomIconSub
       }
-      fontSize={level > 0 ? "inherit" : "default"}
+      fontSize={level > 0 ? 'inherit' : 'default'}
     />
   );
 
   let itemIconClass = !item.icon ? classes.listIcon : classes.menuIcon;
   itemIconClass =
-    customization.navType === "nav-dark"
-      ? [itemIconClass, classes.listCustomIcon].join(" ")
+    customization.navType === 'nav-dark'
+      ? [itemIconClass, classes.listCustomIcon].join(' ')
       : itemIconClass;
 
-  let itemTarget = "";
+  let itemTarget = '';
   if (item.target) {
-    itemTarget = "_blank";
+    itemTarget = '_blank';
   }
 
   let listItemProps = {
@@ -91,7 +91,7 @@ const NavItem = ({ item, level }) => {
     )),
   };
   if (item.external) {
-    listItemProps = { component: "a", href: item.url };
+    listItemProps = { component: 'a', href: item.url };
   }
 
   const itemHandler = (id) => {
@@ -103,7 +103,7 @@ const NavItem = ({ item, level }) => {
   React.useEffect(() => {
     const currentIndex = document.location.pathname
       .toString()
-      .split("/")
+      .split('/')
       .findIndex((id) => id === item.id);
     if (currentIndex > -1) {
       dispatch({ type: MENU_OPEN, id: item.id });
@@ -128,8 +128,8 @@ const NavItem = ({ item, level }) => {
           <Typography
             variant={
               customization.isOpen.findIndex((id) => id === item.id) > -1
-                ? "h5"
-                : "body1"
+                ? 'h5'
+                : 'body1'
             }
             color="inherit"
           >

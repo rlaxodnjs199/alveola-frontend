@@ -1,66 +1,66 @@
-import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // material-ui
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from '@material-ui/styles';
 import {
   Card,
   CardContent,
   Divider,
   Grid,
   Typography,
-} from "@material-ui/core";
-import MuiBreadcrumbs from "@material-ui/core/Breadcrumbs";
+} from '@material-ui/core';
+import MuiBreadcrumbs from '@material-ui/core/Breadcrumbs';
 
 // project imports
-import config from "config";
-import { gridSpacing } from "store/constant";
+import config from 'config';
+import { gridSpacing } from 'store/constant';
 
 // assets
-import AccountTreeTwoToneIcon from "@material-ui/icons/AccountTreeTwoTone";
-import HomeIcon from "@material-ui/icons/Home";
-import HomeTwoToneIcon from "@material-ui/icons/HomeTwoTone";
+import AccountTreeTwoToneIcon from '@material-ui/icons/AccountTreeTwoTone';
+import HomeIcon from '@material-ui/icons/Home';
+import HomeTwoToneIcon from '@material-ui/icons/HomeTwoTone';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
   link: {
-    display: "flex",
+    display: 'flex',
     color: theme.palette.grey[900],
-    textDecoration: "none",
-    alignContent: "center",
-    alignItems: "center",
+    textDecoration: 'none',
+    alignContent: 'center',
+    alignItems: 'center',
   },
   activeLink: {
-    display: "flex",
-    textDecoration: "none",
-    alignContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    textDecoration: 'none',
+    alignContent: 'center',
+    alignItems: 'center',
     color: theme.palette.grey[500],
   },
   icon: {
     marginRight: theme.spacing(0.75),
     marginTop: `-${theme.spacing(0.25)}`,
-    width: "1rem",
-    height: "1rem",
+    width: '1rem',
+    height: '1rem',
     color: theme.palette.secondary.main,
   },
   content: {
-    padding: "16px !important",
+    padding: '16px !important',
   },
   noPadding: {
-    padding: "16px !important",
-    paddingLeft: "0 !important",
+    padding: '16px !important',
+    paddingLeft: '0 !important',
   },
   card: {
     marginBottom: theme.spacing(gridSpacing),
-    border: "1px solid",
+    border: '1px solid',
     borderColor: theme.palette.primary[200] + 75,
   },
   root: {
-    background: "transparent",
-    boxShadow: "none",
-    border: "none",
+    background: 'transparent',
+    boxShadow: 'none',
+    border: 'none',
   },
   titleTop: {
     marginBottom: theme.spacing(1),
@@ -98,9 +98,9 @@ const Breadcrumbs = ({
   const getCollapse = (item) => {
     if (item.children) {
       item.children.filter((collapse) => {
-        if (collapse.type && collapse.type === "collapse") {
+        if (collapse.type && collapse.type === 'collapse') {
           getCollapse(collapse);
-        } else if (collapse.type && collapse.type === "item") {
+        } else if (collapse.type && collapse.type === 'item') {
           if (document.location.pathname === config.basename + collapse.url) {
             setMain(item);
             setItem(collapse);
@@ -113,7 +113,7 @@ const Breadcrumbs = ({
 
   useEffect(() => {
     navigation.items.map((item, index) => {
-      if (item.type && item.type === "group") {
+      if (item.type && item.type === 'group') {
         getCollapse(item, index);
       }
       return false;
@@ -125,7 +125,7 @@ const Breadcrumbs = ({
   const separatorIcon = separator ? (
     <SeparatorIcon stroke={1.5} size="1rem" />
   ) : (
-    "/"
+    '/'
   );
 
   // card class
@@ -142,13 +142,13 @@ const Breadcrumbs = ({
 
   let mainContent;
   let itemContent;
-  let breadcrumbContent = "";
-  let itemTitle = "";
+  let breadcrumbContent = '';
+  let itemTitle = '';
   let CollapseIcon;
   let ItemIcon;
 
   // collapse item
-  if (main && main.type === "collapse") {
+  if (main && main.type === 'collapse') {
     CollapseIcon = main.icon ? main.icon : AccountTreeTwoToneIcon;
     mainContent = (
       <Typography
@@ -164,7 +164,7 @@ const Breadcrumbs = ({
   }
 
   // items
-  if (item && item.type === "item") {
+  if (item && item.type === 'item') {
     itemTitle = item.title;
 
     ItemIcon = item.icon ? item.icon : AccountTreeTwoToneIcon;
@@ -182,16 +182,16 @@ const Breadcrumbs = ({
           <CardContent className={contentClass}>
             <Grid
               container
-              direction={rightAlign ? "row" : "column"}
-              justifyContent={rightAlign ? "space-between" : "flex-start"}
-              alignItems={rightAlign ? "center" : "flex-start"}
+              direction={rightAlign ? 'row' : 'column'}
+              justifyContent={rightAlign ? 'space-between' : 'flex-start'}
+              alignItems={rightAlign ? 'center' : 'flex-start'}
               spacing={1}
             >
               {title && !titleBottom && (
                 <Grid item>
                   <Typography variant="h3" sx={{ fontWeight: 500 }}>
-                    {" "}
-                    {item.title}{" "}
+                    {' '}
+                    {item.title}{' '}
                   </Typography>
                 </Grid>
               )}
@@ -215,7 +215,7 @@ const Breadcrumbs = ({
                         style={{ marginRight: 0 }}
                       />
                     )}
-                    {!icon && "Dashboard"}
+                    {!icon && 'Dashboard'}
                   </Typography>
                   {mainContent}
                   {itemContent}
@@ -224,8 +224,8 @@ const Breadcrumbs = ({
               {title && titleBottom && (
                 <Grid item>
                   <Typography variant="h3" sx={{ fontWeight: 500 }}>
-                    {" "}
-                    {item.title}{" "}
+                    {' '}
+                    {item.title}{' '}
                   </Typography>
                 </Grid>
               )}

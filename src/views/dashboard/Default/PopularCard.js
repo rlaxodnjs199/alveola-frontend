@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 // material-ui
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from '@material-ui/styles';
 import {
   Avatar,
   Button,
@@ -13,53 +13,53 @@ import {
   Menu,
   MenuItem,
   Typography,
-} from "@material-ui/core";
-
-// project imports
-import BajajAreaChartCard from "./BajajAreaChartCard";
-import MainCard from "ui-component/cards/MainCard";
-import SkeletonPopularCard from "ui-component/cards/Skeleton/PopularCard";
-import { gridSpacing } from "store/constant";
+} from '@material-ui/core';
 
 // assets
-import ChevronRightOutlinedIcon from "@material-ui/icons/ChevronRightOutlined";
-import MoreHorizOutlinedIcon from "@material-ui/icons/MoreHorizOutlined";
-import KeyboardArrowUpOutlinedIcon from "@material-ui/icons/KeyboardArrowUpOutlined";
-import KeyboardArrowDownOutlinedIcon from "@material-ui/icons/KeyboardArrowDownOutlined";
+import ChevronRightOutlinedIcon from '@material-ui/icons/ChevronRightOutlined';
+import MoreHorizOutlinedIcon from '@material-ui/icons/MoreHorizOutlined';
+import KeyboardArrowUpOutlinedIcon from '@material-ui/icons/KeyboardArrowUpOutlined';
+import KeyboardArrowDownOutlinedIcon from '@material-ui/icons/KeyboardArrowDownOutlined';
+
+// project imports
+import { gridSpacing } from 'store/constant';
+import MainCard from 'ui-component/cards/MainCard';
+import SkeletonPopularCard from 'ui-component/cards/Skeleton/PopularCard';
+import BajajAreaChartCard from './BajajAreaChartCard';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
   cardAction: {
-    padding: "10px",
+    padding: '10px',
     paddingTop: 0,
-    justifyContent: "center",
+    justifyContent: 'center',
   },
   primaryLight: {
     color: theme.palette.primary[200],
-    cursor: "pointer",
+    cursor: 'pointer',
   },
   divider: {
-    marginTop: "12px",
-    marginBottom: "12px",
+    marginTop: '12px',
+    marginBottom: '12px',
   },
   avatarSuccess: {
-    width: "16px",
-    height: "16px",
-    borderRadius: "5px",
+    width: '16px',
+    height: '16px',
+    borderRadius: '5px',
     backgroundColor: theme.palette.success.light,
     color: theme.palette.success.dark,
-    marginLeft: "15px",
+    marginLeft: '15px',
   },
   successDark: {
     color: theme.palette.success.dark,
   },
   avatarError: {
-    width: "16px",
-    height: "16px",
-    borderRadius: "5px",
+    width: '16px',
+    height: '16px',
+    borderRadius: '5px',
     backgroundColor: theme.palette.orange.light,
     color: theme.palette.orange.dark,
-    marginLeft: "15px",
+    marginLeft: '15px',
   },
   errorDark: {
     color: theme.palette.orange.dark,
@@ -114,12 +114,12 @@ const PopularCard = ({ isLoading }) => {
                       onClose={handleClose}
                       variant="selectedMenu"
                       anchorOrigin={{
-                        vertical: "bottom",
-                        horizontal: "right",
+                        vertical: 'bottom',
+                        horizontal: 'right',
                       }}
                       transformOrigin={{
-                        vertical: "top",
-                        horizontal: "right",
+                        vertical: 'top',
+                        horizontal: 'right',
                       }}
                     >
                       <MenuItem onClick={handleClose}> Today</MenuItem>
@@ -129,7 +129,7 @@ const PopularCard = ({ isLoading }) => {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={12} sx={{ pt: "16px !important" }}>
+              <Grid item xs={12} sx={{ pt: '16px !important' }}>
                 <BajajAreaChartCard />
               </Grid>
               <Grid item xs={12}>

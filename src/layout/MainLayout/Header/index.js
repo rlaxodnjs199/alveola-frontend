@@ -1,18 +1,18 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 // material-ui
-import { makeStyles } from "@material-ui/styles";
-import { Avatar, Box, ButtonBase } from "@material-ui/core";
-
-// project imports
-import LogoSection from "../LogoSection";
-import SearchSection from "./SearchSection";
-import ProfileSection from "./ProfileSection";
-import NotificationSection from "./NotificationSection";
+import { makeStyles } from '@material-ui/styles';
+import { Avatar, Box, ButtonBase } from '@material-ui/core';
 
 // assets
-import { IconMenu2 } from "@tabler/icons";
+import { IconMenu2 } from '@tabler/icons';
+
+// project imports
+import LogoSection from '../LogoSection';
+import SearchSection from './SearchSection';
+import ProfileSection from './ProfileSection';
+import NotificationSection from './NotificationSection';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
@@ -22,19 +22,19 @@ const useStyles = makeStyles((theme) => ({
   headerAvatar: {
     ...theme.typography.commonAvatar,
     ...theme.typography.mediumAvatar,
-    transition: "all .2s ease-in-out",
+    transition: 'all .2s ease-in-out',
     background: theme.palette.secondary.light,
     color: theme.palette.secondary.dark,
-    "&:hover": {
+    '&:hover': {
       background: theme.palette.secondary.dark,
       color: theme.palette.secondary.light,
     },
   },
   boxContainer: {
-    width: "228px",
-    display: "flex",
-    [theme.breakpoints.down("md")]: {
-      width: "auto",
+    width: '228px',
+    display: 'flex',
+    [theme.breakpoints.down('md')]: {
+      width: 'auto',
     },
   },
 }));
@@ -51,13 +51,13 @@ const Header = ({ handleLeftDrawerToggle }) => {
         <Box
           component="span"
           sx={{
-            display: { xs: "none", md: "flex", justifyContent: "center" },
+            display: { xs: 'none', md: 'flex', justifyContent: 'center' },
             flexGrow: 1,
           }}
         >
           <LogoSection />
         </Box>
-        <ButtonBase sx={{ borderRadius: "12px", overflow: "hidden" }}>
+        <ButtonBase sx={{ borderRadius: '12px', overflow: 'hidden' }}>
           <Avatar
             variant="rounded"
             className={classes.headerAvatar}
@@ -83,6 +83,10 @@ const Header = ({ handleLeftDrawerToggle }) => {
 
 Header.propTypes = {
   handleLeftDrawerToggle: PropTypes.func,
+};
+
+Header.defaultProps = {
+  handleLeftDrawerToggle: '',
 };
 
 export default Header;

@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 // third-party
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 // ===========================|| ANIMATION FOR CONTENT ||=========================== //
 
@@ -23,8 +23,8 @@ const NavMotion = ({ children }) => {
   };
 
   const motionTransition = {
-    type: "tween",
-    ease: "anticipate",
+    type: 'tween',
+    ease: 'anticipate',
     duration: 0.4,
   };
 

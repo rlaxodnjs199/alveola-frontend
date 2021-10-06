@@ -1,23 +1,23 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 // material-ui
-import { makeStyles, useTheme } from "@material-ui/styles";
-import { Box, Drawer, useMediaQuery } from "@material-ui/core";
+import { makeStyles, useTheme } from '@material-ui/styles';
+import { Box, Drawer, useMediaQuery } from '@material-ui/core';
 
 // third-party
-import PerfectScrollbar from "react-perfect-scrollbar";
-import { BrowserView, MobileView } from "react-device-detect";
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import { BrowserView, MobileView } from 'react-device-detect';
 
 // project imports
-import MenuList from "./MenuList";
-import LogoSection from "../LogoSection";
-import { drawerWidth } from "store/constant";
+import { drawerWidth } from 'store/constant';
+import MenuList from './MenuList';
+import LogoSection from '../LogoSection';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
   drawer: {
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up('md')]: {
       width: drawerWidth,
       flexShrink: 0,
     },
@@ -26,24 +26,24 @@ const useStyles = makeStyles((theme) => ({
     width: drawerWidth,
     background: theme.palette.background.default,
     color: theme.palette.text.primary,
-    borderRight: "none",
-    [theme.breakpoints.up("md")]: {
-      top: "130px",
+    borderRight: 'none',
+    [theme.breakpoints.up('md')]: {
+      top: '130px',
     },
   },
   ScrollHeight: {
-    height: "calc(100vh - 130px)",
-    paddingLeft: "16px",
-    paddingRight: "16px",
-    [theme.breakpoints.down("sm")]: {
-      height: "calc(100vh - 56px)",
+    height: 'calc(100vh - 130px)',
+    paddingLeft: '16px',
+    paddingRight: '16px',
+    [theme.breakpoints.down('sm')]: {
+      height: 'calc(100vh - 56px)',
     },
   },
   boxContainer: {
-    display: "flex",
-    padding: "16px",
-    marginLeft: "auto",
-    marginRight: "auto",
+    display: 'flex',
+    padding: '16px',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
 }));
 
@@ -52,11 +52,11 @@ const useStyles = makeStyles((theme) => ({
 const Sidebar = ({ drawerOpen, drawerToggle, window }) => {
   const classes = useStyles();
   const theme = useTheme();
-  const matchUpMd = useMediaQuery(theme.breakpoints.up("md"));
+  const matchUpMd = useMediaQuery(theme.breakpoints.up('md'));
 
   const drawer = (
     <>
-      <Box sx={{ display: { xs: "block", md: "none" } }}>
+      <Box sx={{ display: { xs: 'block', md: 'none' } }}>
         <div className={classes.boxContainer}>
           <LogoSection />
         </div>
@@ -81,7 +81,7 @@ const Sidebar = ({ drawerOpen, drawerToggle, window }) => {
     <nav className={classes.drawer} aria-label="mailbox folders">
       <Drawer
         container={container}
-        variant={matchUpMd ? "persistent" : "temporary"}
+        variant={matchUpMd ? 'persistent' : 'temporary'}
         anchor="left"
         open={drawerOpen}
         onClose={drawerToggle}

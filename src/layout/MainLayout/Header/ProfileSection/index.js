@@ -1,8 +1,8 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 // material-ui
-import { makeStyles, useTheme } from "@material-ui/styles";
+import { makeStyles, useTheme } from '@material-ui/styles';
 import {
   Avatar,
   Card,
@@ -20,94 +20,94 @@ import {
   Popper,
   Switch,
   Typography,
-} from "@material-ui/core";
-import ListItemButton from "@material-ui/core/ListItemButton";
+} from '@material-ui/core';
+import ListItemButton from '@material-ui/core/ListItemButton';
 
 // third-party
-import PerfectScrollbar from "react-perfect-scrollbar";
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
 // project imports
-import MainCard from "ui-component/cards/MainCard";
-import Transitions from "ui-component/extended/Transitions";
+import MainCard from 'ui-component/cards/MainCard';
+import Transitions from 'ui-component/extended/Transitions';
 
 // assets
-import { IconLogout, IconSearch, IconSettings } from "@tabler/icons";
-import User1 from "assets/images/users/user-round.svg";
+import { IconLogout, IconSearch, IconSettings } from '@tabler/icons';
+import User1 from 'assets/images/users/user-round.svg';
 
 // style const
 const useStyles = makeStyles((theme) => ({
   navContainer: {
-    width: "100%",
-    maxWidth: "350px",
-    minWidth: "300px",
+    width: '100%',
+    maxWidth: '350px',
+    minWidth: '300px',
     backgroundColor: theme.palette.background.paper,
-    borderRadius: "10px",
-    [theme.breakpoints.down("sm")]: {
-      minWidth: "100%",
+    borderRadius: '10px',
+    [theme.breakpoints.down('sm')]: {
+      minWidth: '100%',
     },
   },
   headerAvatar: {
-    cursor: "pointer",
+    cursor: 'pointer',
     ...theme.typography.mediumAvatar,
-    margin: "8px 0 8px 8px !important",
+    margin: '8px 0 8px 8px !important',
   },
   profileChip: {
-    height: "48px",
-    alignItems: "center",
-    borderRadius: "27px",
-    transition: "all .2s ease-in-out",
+    height: '48px',
+    alignItems: 'center',
+    borderRadius: '27px',
+    transition: 'all .2s ease-in-out',
     borderColor: theme.palette.primary.light,
     backgroundColor: theme.palette.primary.light,
     '&[aria-controls="menu-list-grow"], &:hover': {
       borderColor: theme.palette.primary.main,
       background: `${theme.palette.primary.main}!important`,
       color: theme.palette.primary.light,
-      "& svg": {
+      '& svg': {
         stroke: theme.palette.primary.light,
       },
     },
   },
   profileLabel: {
     lineHeight: 0,
-    padding: "12px",
+    padding: '12px',
   },
   listItem: {
-    marginTop: "5px",
+    marginTop: '5px',
   },
   cardContent: {
-    padding: "16px !important",
+    padding: '16px !important',
   },
   card: {
     backgroundColor: theme.palette.primary.light,
-    marginBottom: "16px",
-    marginTop: "16px",
+    marginBottom: '16px',
+    marginTop: '16px',
   },
   searchControl: {
-    width: "100%",
-    paddingRight: "8px",
-    paddingLeft: "16px",
-    marginBottom: "16px",
-    marginTop: "16px",
+    width: '100%',
+    paddingRight: '8px',
+    paddingLeft: '16px',
+    marginBottom: '16px',
+    marginTop: '16px',
   },
   startAdornment: {
-    fontSize: "1rem",
+    fontSize: '1rem',
     color: theme.palette.grey[500],
   },
   flex: {
-    display: "flex",
+    display: 'flex',
   },
   name: {
-    marginLeft: "2px",
+    marginLeft: '2px',
     fontWeight: 400,
   },
   ScrollHeight: {
-    height: "100%",
-    maxHeight: "calc(100vh - 250px)",
-    overflowX: "hidden",
+    height: '100%',
+    maxHeight: 'calc(100vh - 250px)',
+    overflowX: 'hidden',
   },
   badgeWarning: {
     backgroundColor: theme.palette.warning.dark,
-    color: "#fff",
+    color: '#fff',
   },
 }));
 
@@ -119,14 +119,14 @@ const ProfileSection = () => {
   const customization = useSelector((state) => state.customization);
 
   const [sdm, setSdm] = React.useState(true);
-  const [value, setValue] = React.useState("");
+  const [value, setValue] = React.useState('');
   const [notification, setNotification] = React.useState(false);
   const [selectedIndex] = React.useState(1);
 
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
   const handleLogout = async () => {
-    console.error("Logout");
+    console.error('Logout');
   };
 
   const handleToggle = () => {
@@ -158,7 +158,7 @@ const ProfileSection = () => {
             src={User1}
             className={classes.headerAvatar}
             ref={anchorRef}
-            aria-controls={open ? "menu-list-grow" : undefined}
+            aria-controls={open ? 'menu-list-grow' : undefined}
             aria-haspopup="true"
             color="inherit"
           />
@@ -172,7 +172,7 @@ const ProfileSection = () => {
         }
         variant="outlined"
         ref={anchorRef}
-        aria-controls={open ? "menu-list-grow" : undefined}
+        aria-controls={open ? 'menu-list-grow' : undefined}
         aria-haspopup="true"
         onClick={handleToggle}
         color="primary"
@@ -187,7 +187,7 @@ const ProfileSection = () => {
         popperOptions={{
           modifiers: [
             {
-              name: "offset",
+              name: 'offset',
               options: {
                 offset: [0, 14],
               },
@@ -241,7 +241,7 @@ const ProfileSection = () => {
                       }
                       aria-describedby="search-helper-text"
                       inputProps={{
-                        "aria-label": "weight",
+                        'aria-label': 'weight',
                       }}
                     />
                     <Divider />

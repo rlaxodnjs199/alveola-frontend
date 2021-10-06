@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 
 // material-ui
-import { makeStyles, useTheme } from "@material-ui/styles";
-import { Card, CardContent, Grid, Typography } from "@material-ui/core";
+import { makeStyles, useTheme } from '@material-ui/styles';
+import { Card, CardContent, Grid, Typography } from '@material-ui/core';
 
 // third-party
-import ApexCharts from "apexcharts";
-import Chart from "react-apexcharts";
+import ApexCharts from 'apexcharts';
+import Chart from 'react-apexcharts';
 
 // project imports
-import chartData from "./chart-data/bajaj-area-chart";
+import chartData from './chart-data/bajaj-area-chart';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
@@ -17,12 +17,12 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.light,
   },
   content: {
-    padding: "0px !important",
+    padding: '0px !important',
   },
   contentContainer: {
-    padding: "16px",
+    padding: '16px',
     paddingBottom: 0,
-    color: "#fff",
+    color: '#fff',
   },
   fontStyle: {
     fontWeight: 400,
@@ -42,10 +42,10 @@ const BajajAreaChartCard = () => {
       ...chartData.options,
       colors: [orangeDark],
       tooltip: {
-        theme: "light",
+        theme: 'light',
       },
     };
-    ApexCharts.exec(`support-chart`, "updateOptions", newSupportChart);
+    ApexCharts.exec(`support-chart`, 'updateOptions', newSupportChart);
   }, [orangeDark]);
 
   return (

@@ -1,10 +1,10 @@
 export function constructRowsFromData(ctScanList) {
-    let count = 1;
+  let count = 1;
 
-    ctScanList.forEach(ctScan => {
-        ctScan['id'] = count
-        count++;
-    });
+  ctScanList.forEach((ctScan) => {
+    ctScan["id"] = count;
+    count++;
+  });
 
-    return ctScanList
+  return ctScanList;
 }

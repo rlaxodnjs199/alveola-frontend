@@ -1,5 +1,8 @@
-import axios from 'axios';
+import config from 'config';
+import axios from './axiosProvider';
 
-const apiFetcher = (url) => axios.get(url).then((response) => response.data);
-
-export default apiFetcher;
+export function deidentifyScanSelected(scanSelected) {
+  axios
+    .post(config.apiEndpoints.deidentify, scanSelected)
+    .then((response) => console.log(response));
+}

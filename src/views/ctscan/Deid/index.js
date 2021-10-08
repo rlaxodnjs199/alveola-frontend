@@ -16,7 +16,7 @@ import { deidentifyScanSelected } from 'services/api';
 
 const DeidCTScanPage = () => {
   const [scanSelected, setScanSelected] = useState([]);
-  const { data } = useSWR(config.apiEndpoints.raw, apiFetcher);
+  const { data } = useSWR(config.apiEndpoints.deid, apiFetcher);
   if (!data) return <Loader />;
 
   const columns = [
@@ -64,9 +64,9 @@ const DeidCTScanPage = () => {
 
   return (
     <div>
-      <MainCard title="Raw CT Scan List" style={{ width: 950 }}>
+      <MainCard title="De-idendified CT Scan List" style={{ width: 950 }}>
         <Typography variant="body2">
-          These are the raw ct scan data available in the path: {}
+          These are the de-identified ct scan data available.
         </Typography>
       </MainCard>
       <div

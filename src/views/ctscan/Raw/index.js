@@ -66,7 +66,7 @@ const RawCTScanPage = () => {
     <div>
       <MainCard title="Raw CT Scan List" style={{ width: 950 }}>
         <Typography variant="body2">
-          These are the raw ct scan data available in the path: {}
+          These are the raw ct scan data available.
         </Typography>
       </MainCard>
       <div

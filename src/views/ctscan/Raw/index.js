@@ -10,12 +10,14 @@ import config from 'config';
 import apiFetcher from 'services/apiFetcher';
 import MainCard from 'ui-component/cards/MainCard';
 import Loader from 'ui-component/Loader';
-import { deidentifyScanSelected } from 'services/api';
+// import { deidentifyScanSelected } from 'services/api';
+import RawCTScanPageDialog from './Dialog';
 
 //= =============================|| RAW CT SCAN PAGE ||==============================//
 
 const RawCTScanPage = () => {
   const [scanSelected, setScanSelected] = useState([]);
+  const [openDialog, setOpenDialog] = useState(false);
   const { data } = useSWR(config.apiEndpoints.raw, apiFetcher);
   if (!data) return <Loader />;
 
@@ -62,6 +64,14 @@ const RawCTScanPage = () => {
 
   const rows = constructRowsFromData(data);
 
+  const handleOpenDialog = () => {
+    setOpenDialog(true);
+  };
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+  };
+
   return (
     <div>
       <MainCard title="Raw CT Scan List" style={{ width: 950 }}>
@@ -91,9 +101,17 @@ const RawCTScanPage = () => {
         />
       </div>
       <div>
-        <Button onClick={() => deidentifyScanSelected(scanSelected)}>
+        {/* <Button onClick={() => deidentifyScanSelected(scanSelected)}>
+          De-identify Selected CT Scans
+        </Button> */}
+        <Button onClick={handleOpenDialog}>
           De-identify Selected CT Scans
         </Button>
+        <RawCTScanPageDialog
+          open={openDialog}
+          onClose={handleCloseDialog}
+          scanSelected={scanSelected}
+        />
       </div>
     </div>
   );

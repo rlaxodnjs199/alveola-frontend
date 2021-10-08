@@ -26,7 +26,8 @@ const UtilsTablerIcons = Loadable(
 const SamplePage = Loadable(lazy(() => import('views/sample-page')));
 
 // ct scan page routing
-const CTScanPage = Loadable(lazy(() => import('views/ctscan')));
+const RawCTScanPage = Loadable(lazy(() => import('views/ctscan/Raw')));
+const DeidCTScanPage = Loadable(lazy(() => import('views/ctscan/Deid')));
 
 // ===========================|| MAIN ROUTING ||=========================== //
 
@@ -67,8 +68,12 @@ const MainRoutes = {
       element: <SamplePage />,
     },
     {
-      path: '/ct-scan',
-      element: <CTScanPage />,
+      path: '/ct-scan/raw',
+      element: <RawCTScanPage />,
+    },
+    {
+      path: '/ct-scan/deid',
+      element: <DeidCTScanPage />,
     },
   ],
 };

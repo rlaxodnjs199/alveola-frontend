@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Button,
   Dialog,
   DialogTitle,
   Table,
@@ -13,23 +12,24 @@ import {
   Paper,
   CircularProgress,
 } from '@material-ui/core';
-// import { deidentifyScanSelected } from 'services/api';
+import { IconChecks } from '@tabler/icons';
 
 const RawCTScanPageDialog = (props) => {
-  const { open, onClose, scanSelected } = props;
-
-  function parseData(scanSelected) {
-    const scanSelectedArray = [];
-    scanSelected.forEach((scan) => {
-      console.log(Object.values(scan));
-    });
-    console.log(scanSelectedArray);
-  }
+  const { open, onClose, scanSelected, deidStatus } = props;
 
   return (
     <Dialog open={open} onClose={onClose}>
-      <DialogTitle>De-identify selected raw DICOM scans</DialogTitle>
-      <TableContainer component={Paper}>
+      <DialogTitle sx={{ fontSize: 17, paddingLeft: '30px' }}>
+        De-identify selected raw DICOM scans
+      </DialogTitle>
+      <TableContainer
+        component={Paper}
+        style={{
+          paddingLeft: '20px',
+          paddingRight: '20px',
+          paddingBottom: '20px',
+        }}
+      >
         <Table size="medium" aria-label="a dense table">
           <TableHead>
             <TableRow>
@@ -55,20 +55,17 @@ const RawCTScanPageDialog = (props) => {
                 <TableCell align="left">{scan.acquisition_date}</TableCell>
                 <TableCell align="left">{scan.worker}</TableCell>
                 <TableCell align="left">
-                  <CircularProgress />
+                  {deidStatus[scan.id] ? (
+                    <IconChecks />
+                  ) : (
+                    <CircularProgress size="1rem" />
+                  )}
                 </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
-      <Button
-        onClick={() => {
-          parseData(scanSelected);
-        }}
-      >
-        Click
-      </Button>
     </Dialog>
   );
 };
@@ -79,4 +76,5 @@ RawCTScanPageDialog.propTypes = {
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   scanSelected: PropTypes.array.isRequired,
+  deidStatus: PropTypes.object.isRequired,
 };

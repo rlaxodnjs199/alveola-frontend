@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useSWR from 'swr';
 
 // material-ui
@@ -10,12 +10,10 @@ import config from 'config';
 import apiFetcher from 'services/apiFetcher';
 import MainCard from 'ui-component/cards/MainCard';
 import Loader from 'ui-component/Loader';
-import { deidentifyScanSelected } from 'services/api';
 
 //= =============================|| RAW CT SCAN PAGE ||==============================//
 
 const DeidCTScanPage = () => {
-  const [scanSelected, setScanSelected] = useState([]);
   const { data } = useSWR(config.apiEndpoints.deid, apiFetcher);
   if (!data) return <Loader />;
 
@@ -57,7 +55,6 @@ const DeidCTScanPage = () => {
   function updateScanSelected(scanIndexes) {
     const dataSelected = [];
     scanIndexes.forEach((scanIndex) => dataSelected.push(data[scanIndex - 1]));
-    setScanSelected(dataSelected);
   }
 
   const rows = constructRowsFromData(data);
@@ -66,7 +63,7 @@ const DeidCTScanPage = () => {
     <div>
       <MainCard title="De-idendified CT Scan List" style={{ width: 950 }}>
         <Typography variant="body2">
-          These are the de-identified ct scan data available.
+          These are the de-identified CT scan data available.
         </Typography>
       </MainCard>
       <div
@@ -91,9 +88,7 @@ const DeidCTScanPage = () => {
         />
       </div>
       <div>
-        <Button onClick={() => deidentifyScanSelected(scanSelected)}>
-          De-identify Selected CT Scans
-        </Button>
+        <Button>De-identify Selected CT Scans</Button>
       </div>
     </div>
   );

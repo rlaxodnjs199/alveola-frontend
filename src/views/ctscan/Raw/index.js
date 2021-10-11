@@ -10,7 +10,7 @@ import config from 'config';
 import apiFetcher from 'services/apiFetcher';
 import MainCard from 'ui-component/cards/MainCard';
 import Loader from 'ui-component/Loader';
-// import { deidentifyScanSelected } from 'services/api';
+import { deidentifyScan } from 'services/api';
 import RawCTScanPageDialog from './Dialog';
 
 //= =============================|| RAW CT SCAN PAGE ||==============================//
@@ -18,6 +18,8 @@ import RawCTScanPageDialog from './Dialog';
 const RawCTScanPage = () => {
   const [scanSelected, setScanSelected] = useState([]);
   const [openDialog, setOpenDialog] = useState(false);
+  const [deidStatus, setDeidStatus] = useState({});
+
   const { data } = useSWR(config.apiEndpoints.raw, apiFetcher);
   if (!data) return <Loader />;
 
@@ -62,10 +64,28 @@ const RawCTScanPage = () => {
     setScanSelected(dataSelected);
   }
 
+  function buildInitialDeidStatus() {
+    const newDeidStatus = {};
+    scanSelected.forEach((scan) => {
+      newDeidStatus[scan.id] = false;
+    });
+    setDeidStatus(newDeidStatus);
+  }
+
+  function updateDeidStatus(scanID) {
+    setDeidStatus((prevState) => ({ ...prevState, [scanID]: true }));
+  }
+
   const rows = constructRowsFromData(data);
 
-  const handleOpenDialog = () => {
+  const deIdentifySelectedCTScans = () => {
+    buildInitialDeidStatus();
     setOpenDialog(true);
+    scanSelected.forEach((scan) => {
+      deidentifyScan(scan).then(() => {
+        updateDeidStatus(scan.id);
+      });
+    });
   };
 
   const handleCloseDialog = () => {
@@ -76,7 +96,7 @@ const RawCTScanPage = () => {
     <div>
       <MainCard title="Raw CT Scan List" style={{ width: 950 }}>
         <Typography variant="body2">
-          These are the raw ct scan data available.
+          These are the raw CT scan data available.
         </Typography>
       </MainCard>
       <div
@@ -101,16 +121,14 @@ const RawCTScanPage = () => {
         />
       </div>
       <div>
-        {/* <Button onClick={() => deidentifyScanSelected(scanSelected)}>
-          De-identify Selected CT Scans
-        </Button> */}
-        <Button onClick={handleOpenDialog}>
+        <Button onClick={deIdentifySelectedCTScans}>
           De-identify Selected CT Scans
         </Button>
         <RawCTScanPageDialog
           open={openDialog}
           onClose={handleCloseDialog}
           scanSelected={scanSelected}
+          deidStatus={deidStatus}
         />
       </div>
     </div>

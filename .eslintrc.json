@@ -27,6 +27,8 @@
     "react/require-default-props": "off",
     "no-param-reassign": "off",
     "import/prefer-default-export": "off",
-    "no-shadow": "off"
+    "no-shadow": "off",
+    "no-restricted-syntax": "off",
+    "dot-notation": "off"
   }
 }

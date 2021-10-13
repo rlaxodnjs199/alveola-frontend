@@ -32,11 +32,26 @@ const DeidCTScanPage = () => {
     {
       field: 'acquisition_date',
       headerName: 'Acquisition Date',
-      width: 250,
+      width: 200,
     },
     {
       field: 'worker',
       headerName: 'Worker',
+      width: 130,
+    },
+    {
+      field: 'created_at',
+      headerName: 'Created At',
+      width: 170,
+    },
+    {
+      field: 'updated_at',
+      headerName: 'Updated At',
+      width: 170,
+    },
+    {
+      field: 'status',
+      headerName: 'Status',
       width: 170,
     },
   ];
@@ -61,7 +76,7 @@ const DeidCTScanPage = () => {
 
   return (
     <div>
-      <MainCard title="De-idendified CT Scan List" style={{ width: 950 }}>
+      <MainCard title="De-idendified CT Scan List" style={{ width: 1500 }}>
         <Typography variant="body2">
           These are the de-identified CT scan data available.
         </Typography>
@@ -70,7 +85,7 @@ const DeidCTScanPage = () => {
         style={{
           marginTop: '2vh',
           maxHeight: 700,
-          width: 950,
+          width: 1500,
           background: 'white',
         }}
       >

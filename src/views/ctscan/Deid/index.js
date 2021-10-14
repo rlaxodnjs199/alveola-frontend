@@ -3,7 +3,13 @@ import useSWR from 'swr';
 
 // material-ui
 import { DataGrid } from '@mui/x-data-grid';
-import { Button, Typography } from '@material-ui/core';
+import {
+  Button,
+  Typography,
+  FormControl,
+  MenuItem,
+  Select,
+} from '@material-ui/core';
 
 // project imports
 import config from 'config';
@@ -14,8 +20,39 @@ import Loader from 'ui-component/Loader';
 //= =============================|| RAW CT SCAN PAGE ||==============================//
 
 const DeidCTScanPage = () => {
+  const [age, setAge] = React.useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
   const { data } = useSWR(config.apiEndpoints.deid, apiFetcher);
   if (!data) return <Loader />;
+
+  const renderDetailsButton = (param) => {
+    return (
+      <FormControl variant="standard" sx={{ m: 1, minWidth: 80 }}>
+        <Select
+          value={age}
+          onChange={handleChange}
+          displayEmpty
+          autoWidth
+          inputProps={{ 'aria-label': 'Without label' }}
+        >
+          <MenuItem value="">
+            <em>{param.row.status}</em>
+          </MenuItem>
+          <MenuItem value={10}>
+            <em>VIDA-imported</em>
+          </MenuItem>
+          <MenuItem value={20}>
+            <em>DL-segmented</em>
+          </MenuItem>
+        </Select>
+        {/* <FormHelperText>Without label</FormHelperText> */}
+      </FormControl>
+    );
+  };
 
   const columns = [
     { field: 'id', width: 100, headerName: 'ID' },
@@ -53,6 +90,8 @@ const DeidCTScanPage = () => {
       field: 'status',
       headerName: 'Status',
       width: 170,
+      renderCell: renderDetailsButton,
+      disableClickEventBubbling: true,
     },
   ];
 
@@ -103,7 +142,7 @@ const DeidCTScanPage = () => {
         />
       </div>
       <div>
-        <Button>De-identify Selected CT Scans</Button>
+        <Button>Update Scan Status</Button>
       </div>
     </div>
   );

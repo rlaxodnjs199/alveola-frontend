@@ -77,13 +77,13 @@ const DeidCTScanPage = () => {
       width: 130,
     },
     {
-      field: 'created_at',
-      headerName: 'Created At',
+      field: 'in_or_ex',
+      headerName: 'IN / EX',
       width: 170,
     },
     {
-      field: 'updated_at',
-      headerName: 'Updated At',
+      field: 'timepoint',
+      headerName: 'Timepoint',
       width: 170,
     },
     {
@@ -131,7 +131,7 @@ const DeidCTScanPage = () => {
         <DataGrid
           rows={rows}
           columns={columns}
-          pageSize={5}
+          pageSize={15}
           rowsPerPageOptions={[5]}
           checkboxSelection
           disableSelectionOnClick

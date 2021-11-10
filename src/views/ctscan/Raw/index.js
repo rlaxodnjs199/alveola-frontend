@@ -31,18 +31,18 @@ const RawCTScanPage = () => {
       width: 170,
     },
     {
-      field: 'participant_id',
-      headerName: 'Participant ID',
+      field: 'pid',
+      headerName: 'PID',
       width: 170,
     },
     {
       field: 'acquisition_date',
       headerName: 'Acquisition Date',
-      width: 250,
+      width: 200,
     },
     {
-      field: 'worker',
-      headerName: 'Worker',
+      field: 'processed_by',
+      headerName: 'Processed By',
       width: 170,
     },
   ];

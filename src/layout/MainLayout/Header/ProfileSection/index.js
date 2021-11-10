@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 // material-ui
 import { makeStyles, useTheme } from '@material-ui/styles';
 import {
-  Avatar,
   Card,
   CardContent,
   Chip,
@@ -32,7 +31,6 @@ import Transitions from 'ui-component/extended/Transitions';
 
 // assets
 import { IconLogout, IconSearch, IconSettings } from '@tabler/icons';
-import User1 from 'assets/images/users/user-round.svg';
 
 // style const
 const useStyles = makeStyles((theme) => ({
@@ -153,16 +151,6 @@ const ProfileSection = () => {
       <Chip
         classes={{ label: classes.profileLabel }}
         className={classes.profileChip}
-        icon={
-          <Avatar
-            src={User1}
-            className={classes.headerAvatar}
-            ref={anchorRef}
-            aria-controls={open ? 'menu-list-grow' : undefined}
-            aria-haspopup="true"
-            color="inherit"
-          />
-        }
         label={
           <IconSettings
             stroke={1.5}

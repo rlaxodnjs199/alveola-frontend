@@ -62,8 +62,8 @@ const DeidCTScanPage = () => {
       width: 170,
     },
     {
-      field: 'participant_id',
-      headerName: 'Participant ID',
+      field: 'pid',
+      headerName: 'PID',
       width: 170,
     },
     {
@@ -72,9 +72,9 @@ const DeidCTScanPage = () => {
       width: 200,
     },
     {
-      field: 'worker',
-      headerName: 'Worker',
-      width: 130,
+      field: 'processed_by',
+      headerName: 'Processed By',
+      width: 170,
     },
     {
       field: 'in_or_ex',

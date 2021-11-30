@@ -17,7 +17,8 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import ImgRRAVC from 'assets/images/rravc.PNG';
 import ImgFSAD from 'assets/images/fSAD.PNG';
-import ImgGraph from 'assets/images/graph.PNG';
+import FSADChart from './FSAD';
+import FEV1PREChart from './FEV1PRE';
 
 const Dashboard = () => {
   const [openBasicInfo, setOpenBasicInfo] = React.useState(false);
@@ -164,12 +165,18 @@ const Dashboard = () => {
                 </Grid>
                 <Grid item>
                   <Paper elevation={8} sx={{ height: 737, width: 350 }}>
-                    <img
-                      style={{ padding: '10px' }}
-                      src={ImgGraph}
-                      alt="Lamis"
-                      width="335"
-                    />
+                    <Box
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      width={300}
+                      height={300}
+                    >
+                      <Box m="auto">
+                        <FSADChart />
+                        <FEV1PREChart />
+                      </Box>
+                    </Box>
                   </Paper>
                 </Grid>
               </Grid>

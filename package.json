@@ -13,6 +13,7 @@
     "@material-ui/styles": "^5.0.0-beta.0",
     "@material-ui/utils": "^5.0.0-beta.0",
     "@mui/x-data-grid": "^4.0.1",
+    "@react-three/fiber": "^7.0.21",
     "@tabler/icons": "^1.39.1",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
@@ -37,6 +38,7 @@
     "recharts": "^2.1.6",
     "redux": "^4.0.5",
     "swr": "^1.0.1",
+    "three": "^0.135.0",
     "yup": "^0.32.9"
   },
   "scripts": {

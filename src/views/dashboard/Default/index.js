@@ -19,6 +19,7 @@ import ImgRRAVC from 'assets/images/rravc.PNG';
 import ImgFSAD from 'assets/images/fSAD.PNG';
 import FSADChart from './FSAD';
 import FEV1PREChart from './FEV1PRE';
+import Lung3D from './Lung3D';
 
 const Dashboard = () => {
   const [openBasicInfo, setOpenBasicInfo] = React.useState(false);
@@ -161,6 +162,11 @@ const Dashboard = () => {
                       </Typography>
                       <img src={ImgFSAD} alt="Lamis" width="480" />
                     </div>
+                  </Paper>
+                </Grid>
+                <Grid item>
+                  <Paper elevation={8} sx={{ height: 737, width: 500 }}>
+                    <Lung3D />
                   </Paper>
                 </Grid>
                 <Grid item>

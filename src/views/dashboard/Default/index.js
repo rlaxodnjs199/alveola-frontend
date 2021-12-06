@@ -165,7 +165,7 @@ const Dashboard = () => {
                   </Paper>
                 </Grid>
                 <Grid item>
-                  <Paper elevation={8} sx={{ height: 737, width: 500 }}>
+                  <Paper elevation={8} sx={{ height: 737, width: 400 }}>
                     <Lung3D />
                   </Paper>
                 </Grid>
